@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/antoi/Desktop/Ynov/Ynov_B3/PokemonCpp
+# Install script for directory: C:/Users/notitou/Desktop/Cours/B3/C++/PokemonCpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/antoi/Desktop/Ynov/Ynov_B3/PokemonCpp/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/notitou/Desktop/Cours/B3/C++/PokemonCpp/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

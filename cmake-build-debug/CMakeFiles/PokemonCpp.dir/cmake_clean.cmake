@@ -2,8 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/PokemonCpp.dir/main.cpp.obj"
   "PokemonCpp.exe"
   "PokemonCpp.exe.manifest"
+  "PokemonCpp.lib"
   "PokemonCpp.pdb"
-  "libPokemonCpp.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

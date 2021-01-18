@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/antoi/Desktop/Ynov/Ynov_B3/PokemonCpp/main.cpp" "C:/Users/antoi/Desktop/Ynov/Ynov_B3/PokemonCpp/cmake-build-debug/CMakeFiles/PokemonCpp.dir/main.cpp.obj"
+  "C:/Users/notitou/Desktop/Cours/B3/C++/PokemonCpp/main.cpp" "C:/Users/notitou/Desktop/Cours/B3/C++/PokemonCpp/cmake-build-debug/CMakeFiles/PokemonCpp.dir/main.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
