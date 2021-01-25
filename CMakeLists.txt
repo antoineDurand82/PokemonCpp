@@ -3,4 +3,4 @@ project(PokemonCpp)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(PokemonCpp main.cpp)
+add_executable(PokemonCpp main.cpp Classes/Trainer/Trainer.cpp Classes/Trainer/Trainer.h Classes/Pokemon/Pokemon.cpp Classes/Pokemon/Pokemon.h Classes/Move/Move.cpp Classes/Move/Move.h Classes/PokemonType/PokemonType.cpp Classes/PokemonType/PokemonType.h Classes/Item/Item.cpp Classes/Item/Item.h)
