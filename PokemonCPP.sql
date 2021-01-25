@@ -1,19 +1,20 @@
 CREATE TABLE `pokemon` (
-  `id` int AUTO_INCREMENT,
+  `id` int,
   `pokemonName` varchar(255),
   `name` varchar(255),
+  `type` PokemonType,
   `hp` int,
-  `tms` [TM],
+  `moves` vectorMove,
   `useTM` method
 );
 
 CREATE TABLE `trainer` (
-  `id` int AUTO_INCREMENT,
+  `id` int,
   `name` varchar(255),
-  `teams` [pokemon],
-  `pc` [pokemon],
+  `teams` vectorPokemon,
+  `pc` vectorPokemon,
   `money` int,
-  `inventory` [item],
+  `inventory` vectorItem,
   `searchWildPokemon` method,
   `runAway` method,
   `useItem` method,
@@ -25,7 +26,7 @@ CREATE TABLE `trainer` (
 );
 
 CREATE TABLE `item` (
-  `id` int AUTO_INCREMENT,
+  `id` int,
   `name` varchar(255),
   `price` int
 );
@@ -43,7 +44,7 @@ CREATE TABLE `Building` (
 );
 
 CREATE TABLE `Shop` (
-  `stock` [Item],
+  `stock` vectorItem,
   `achat` method,
   `revente` method
 );
@@ -54,22 +55,22 @@ CREATE TABLE `pokemonCenter` (
 );
 
 CREATE TABLE `Gym` (
-  `listTrainer` trainer[],
+  `listTrainer` vectorTrainer,
   `goPokemonCenter` method,
   `nextTrainer` method
 );
 
-CREATE TABLE `Type` (
+CREATE TABLE `PokemonType` (
   `name` varchar(255),
-  `weakAgainst` [Type],
-  `strongAgainst` [Type],
-  `notEffectiveAgainst` [Type],
-  `weakTo` [Type],
-  `strongTo` [Type],
-  `notEffectiveTo` [Type]
+  `weakAgainst` vectorPokemonType,
+  `strongAgainst` vectorPokemonType,
+  `notEffectiveAgainst` vectorPokemonType,
+  `weakTo` vectorPokemonType,
+  `strongTo` vectorPokemonType,
+  `notEffectiveTo` vectorPokemonType
 );
 
-CREATE TABLE `TM` (
+CREATE TABLE `Move` (
   `name` varchar(255),
   `type` type,
   `power` int,
