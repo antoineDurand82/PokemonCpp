@@ -66,8 +66,8 @@ CREATE TABLE `PokemonType` (
   `strongAgainst` vectorPokemonType,
   `notEffectiveAgainst` vectorPokemonType,
   `weakTo` vectorPokemonType,
-  `strongTo` vectorPokemonType,
-  `notEffectiveTo` vectorPokemonType
+  `resistTo` vectorPokemonType,
+  `immuneTo` vectorPokemonType
 );
 
 CREATE TABLE `Move` (
