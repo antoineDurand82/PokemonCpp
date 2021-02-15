@@ -11,7 +11,6 @@ Move::Move(const std::string &name, const PokemonType &type, int power, int accu
                                                                                                                  accuracy),
                                                                                                          powerPoints(
                                                                                                                  powerPoints) {}
-Move::Move() {}
 
 const std::string &Move::getName() const {
     return name;

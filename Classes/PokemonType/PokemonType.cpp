@@ -4,8 +4,6 @@
 
 #include "PokemonType.h"
 
-PokemonType::PokemonType() {}
-
 PokemonType::PokemonType(const std::string &name, const std::vector<std::string> &weakAgainst,
                          const std::vector<std::string> &strongAgainst,
                          const std::vector<std::string> &notEffectiveAgainst, const std::vector<std::string> &weakTo,
