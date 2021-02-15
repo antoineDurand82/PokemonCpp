@@ -4,13 +4,9 @@
 
 #include "Move.h"
 
-Move::Move(const std::string &name, const PokemonType &type, int power, int accuracy, int powerPoints) : name(name),
-                                                                                                         type(type),
-                                                                                                         power(power),
-                                                                                                         accuracy(
-                                                                                                                 accuracy),
-                                                                                                         powerPoints(
-                                                                                                                 powerPoints) {}
+Move::Move(const std::string &name, const PokemonType &type, int power, int accuracy, int powerPoints,
+           int maxPowerPoints) : name(name), type(type), power(power), accuracy(accuracy), powerPoints(powerPoints),
+                                 maxPowerPoints(maxPowerPoints) {}
 
 const std::string &Move::getName() const {
     return name;
@@ -50,5 +46,13 @@ int Move::getPowerPoints() const {
 
 void Move::setPowerPoints(int powerPoints) {
     Move::powerPoints = powerPoints;
+}
+
+int Move::getMaxPowerPoints() const {
+    return maxPowerPoints;
+}
+
+void Move::setMaxPowerPoints(int maxPowerPoints) {
+    Move::maxPowerPoints = maxPowerPoints;
 }
 

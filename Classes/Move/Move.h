@@ -15,8 +15,11 @@ private:
     int power;
     int accuracy;
     int powerPoints;
+    int maxPowerPoints;
 public:
-    Move(const std::string &name, const PokemonType &type, int power, int accuracy, int powerPoints);
+
+    Move(const std::string &name, const PokemonType &type, int power, int accuracy, int powerPoints,
+         int maxPowerPoints);
 
     const std::string &getName() const;
 
@@ -37,6 +40,10 @@ public:
     int getPowerPoints() const;
 
     void setPowerPoints(int powerPoints);
+
+    int getMaxPowerPoints() const;
+
+    void setMaxPowerPoints(int maxPowerPoints);
 };
 
 
