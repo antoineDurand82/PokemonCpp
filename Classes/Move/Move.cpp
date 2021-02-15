@@ -52,3 +52,4 @@ int Move::getPowerPoints() const {
 void Move::setPowerPoints(int powerPoints) {
     Move::powerPoints = powerPoints;
 }
+

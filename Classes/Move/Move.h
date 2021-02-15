@@ -11,7 +11,15 @@
 class Move {
 private:
     std::string name;
+    PokemonType type;
+    int power;
+    int accuracy;
+    int powerPoints;
 public:
+    Move(const std::string &name, const PokemonType &type, int power, int accuracy, int powerPoints);
+
+    Move();
+
     const std::string &getName() const;
 
     void setName(const std::string &name);
@@ -31,16 +39,6 @@ public:
     int getPowerPoints() const;
 
     void setPowerPoints(int powerPoints);
-
-private:
-    PokemonType type;
-    int power;
-    int accuracy;
-    int powerPoints;
-public:
-    Move(const std::string &name, const PokemonType &type, int power, int accuracy, int powerPoints);
-
-    Move();
 };
 
 

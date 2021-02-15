@@ -25,6 +25,20 @@ public:
                 const std::vector<std::string> &immuneTo);
 
     PokemonType();
+
+    const std::string &getName() const;
+
+    const std::vector<std::string> &getWeakAgainst() const;
+
+    const std::vector<std::string> &getStrongAgainst() const;
+
+    const std::vector<std::string> &getNotEffectiveAgainst() const;
+
+    const std::vector<std::string> &getWeakTo() const;
+
+    const std::vector<std::string> &getResistTo() const;
+
+    const std::vector<std::string> &getImmuneTo() const;
 };
 
 #endif //POKEMONCPP_POKEMONTYPE_H

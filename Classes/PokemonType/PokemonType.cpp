@@ -16,3 +16,31 @@ PokemonType::PokemonType(const std::string &name, const std::vector<std::string>
                                                                                                                        resistTo),
                                                                                                                immuneTo(
                                                                                                                        immuneTo) {}
+
+const std::string &PokemonType::getName() const {
+    return name;
+}
+
+const std::vector<std::string> &PokemonType::getWeakAgainst() const {
+    return weakAgainst;
+}
+
+const std::vector<std::string> &PokemonType::getStrongAgainst() const {
+    return strongAgainst;
+}
+
+const std::vector<std::string> &PokemonType::getNotEffectiveAgainst() const {
+    return notEffectiveAgainst;
+}
+
+const std::vector<std::string> &PokemonType::getWeakTo() const {
+    return weakTo;
+}
+
+const std::vector<std::string> &PokemonType::getResistTo() const {
+    return resistTo;
+}
+
+const std::vector<std::string> &PokemonType::getImmuneTo() const {
+    return immuneTo;
+}
