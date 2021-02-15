@@ -66,7 +66,7 @@ void Pokemon::setMaxHp(int maxHp) {
     maxHP = maxHp;
 }
 
-const std::vector<Move> &Pokemon::getMoves() const {
+const std::vector<Move> &Pokemon::getMoves() {
     return moves;
 }
 

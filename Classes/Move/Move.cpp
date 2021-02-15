@@ -52,3 +52,11 @@ void Move::setPowerPoints(int powerPoints) {
     Move::powerPoints = powerPoints;
 }
 
+int Move::getMaxPowerPoints() const {
+    return maxPowerPoints;
+}
+
+void Move::setMaxPowerPoints(int maxPowerPoints) {
+    Move::maxPowerPoints = maxPowerPoints;
+}
+

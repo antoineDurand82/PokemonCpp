@@ -19,7 +19,6 @@ class Pokemon {
     PokemonType type;
     int currentHP;
     int maxHP;
-    std::vector<Move> moves;
     bool isCaptured;
 public:
 
@@ -54,13 +53,15 @@ public:
 
     void setMaxHp(int maxHp);
 
-    const std::vector<Move> &getMoves() const;
+    const std::vector<Move> &getMoves();
 
     void setMoves(const std::vector<Move> &moves);
 
     void setIsCaptured(bool isCaptured);
 
     bool getIsCaptured() const;
+
+    std::vector<Move> moves;
 };
 
 
