@@ -8,7 +8,7 @@ Pokemon::Pokemon(int id, const std::string &name, const PokemonType &type, int c
                  const std::vector<Move> &moves, bool isCaptured) : id(id), name(name), type(type),
                                                                     currentHP(currentHp), maxHP(maxHp), moves(moves),
                                                                     isCaptured(isCaptured) {}
-                                                                    
+
 void Pokemon::rename(std::string newPokemonName) {
     this->pokemonName = newPokemonName;
 }
@@ -72,4 +72,12 @@ const std::vector<Move> &Pokemon::getMoves() const {
 
 void Pokemon::setMoves(const std::vector<Move> &moves) {
     Pokemon::moves = moves;
+}
+
+bool Pokemon::isCaptured1() const {
+    return isCaptured;
+}
+
+void Pokemon::setIsCaptured(bool isCaptured) {
+    Pokemon::isCaptured = isCaptured;
 }
