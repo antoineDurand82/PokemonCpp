@@ -28,8 +28,6 @@ public:
     Pokemon(int id, const std::string &name, const PokemonType &type, int currentHp, int maxHp,
             const std::vector<Move> &moves, bool isCaptured);
 
-    void rename();
-
     void rename(std::string pokemonName);
 
     int useTM(Move move);

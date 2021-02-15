@@ -10,7 +10,7 @@ Pokemon::Pokemon(int id, const std::string &name, const PokemonType &type, int c
                                                                     isCaptured(isCaptured) {}
 
 void Pokemon::rename(std::string newPokemonName) {
-    this->pokemonName = newPokemonName;
+    setPokemonName(newPokemonName);
 }
 
 int Pokemon::useTM(Move move){
