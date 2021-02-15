@@ -4,11 +4,15 @@
 
 #include "PokemonType.h"
 
-PokemonType::PokemonType(const std::string &name, const std::vector<PokemonType> &weakAgainst,
-                         const std::vector<PokemonType> &strongAgainst,
-                         const std::vector<PokemonType> &notEffectiveAgainst, const std::vector<PokemonType> &weakTo,
-                         const std::vector<PokemonType> &stringTo, const std::vector<PokemonType> &notEffectiveTo)
-        : name(name), weakAgainst(weakAgainst), strongAgainst(strongAgainst), notEffectiveAgainst(notEffectiveAgainst),
-          weakTo(weakTo), stringTo(stringTo), notEffectiveTo(notEffectiveTo) {}
-
 PokemonType::PokemonType() {}
+
+PokemonType::PokemonType(const std::string &name, const std::vector<std::string> &weakAgainst,
+                         const std::vector<std::string> &strongAgainst,
+                         const std::vector<std::string> &notEffectiveAgainst, const std::vector<std::string> &weakTo,
+                         const std::vector<std::string> &resistTo, const std::vector<std::string> &immuneTo) : name(
+        name), weakAgainst(weakAgainst), strongAgainst(strongAgainst), notEffectiveAgainst(notEffectiveAgainst),
+                                                                                                               weakTo(weakTo),
+                                                                                                               resistTo(
+                                                                                                                       resistTo),
+                                                                                                               immuneTo(
+                                                                                                                       immuneTo) {}

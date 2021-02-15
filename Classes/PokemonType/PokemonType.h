@@ -6,23 +6,25 @@
 #define POKEMONCPP_POKEMONTYPE_H
 #include <iostream>
 #include <vector>
-#endif //POKEMONCPP_ENUMPOKEMONTYPE_H
+
 
 class PokemonType {
 private:
     std::string name;
-    std::vector<PokemonType> weakAgainst;
-    std::vector<PokemonType> strongAgainst;
-    std::vector<PokemonType> notEffectiveAgainst;
-    std::vector<PokemonType> weakTo;
-    std::vector<PokemonType> stringTo;
-    std::vector<PokemonType> notEffectiveTo;
+    std::vector<std::string> weakAgainst;
+    std::vector<std::string> strongAgainst;
+    std::vector<std::string> notEffectiveAgainst;
+    std::vector<std::string> weakTo;
+    std::vector<std::string> resistTo;
+    std::vector<std::string> immuneTo;
 public:
-    PokemonType(const std::string &name, const std::vector<PokemonType> &weakAgainst,
-                const std::vector<PokemonType> &strongAgainst, const std::vector<PokemonType> &notEffectiveAgainst,
-                const std::vector<PokemonType> &weakTo, const std::vector<PokemonType> &stringTo,
-                const std::vector<PokemonType> &notEffectiveTo);
+
+    PokemonType(const std::string &name, const std::vector<std::string> &weakAgainst,
+                const std::vector<std::string> &strongAgainst, const std::vector<std::string> &notEffectiveAgainst,
+                const std::vector<std::string> &weakTo, const std::vector<std::string> &resistTo,
+                const std::vector<std::string> &immuneTo);
 
     PokemonType();
 };
 
+#endif //POKEMONCPP_POKEMONTYPE_H
