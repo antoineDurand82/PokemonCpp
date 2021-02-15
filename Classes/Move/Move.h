@@ -17,7 +17,9 @@ private:
     int powerPoints;
     int maxPowerPoints;
 public:
-    Move(const std::string &name, const PokemonType &type, int power, int accuracy, int powerPoints);
+
+    Move(const std::string &name, const PokemonType &type, int power, int accuracy, int powerPoints,
+         int maxPowerPoints);
 
     const std::string &getName() const;
 
