@@ -3,7 +3,8 @@ CREATE TABLE `pokemon` (
   `pokemonName` varchar(255),
   `name` varchar(255),
   `type` PokemonType,
-  `hp` int,
+  `currentHP` int,
+  `maxHP` int,
   `moves` vectorMove,
   `useTM` method
 );
