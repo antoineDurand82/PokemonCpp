@@ -4,11 +4,11 @@
 
 #include "Pokemon.h"
 
-Pokemon::Pokemon(int id, const std::string &name, const PokemonType &type,
-                 int currentHp, int maxHp, const std::vector<Move> &moves) : id(id), pokemonName(pokemonName),
-                                                                             name(name), type(type),
-                                                                             currentHP(currentHp), maxHP(maxHp),
-                                                                             moves(moves) {}
+Pokemon::Pokemon(int id, const std::string &name, const PokemonType &type, int currentHp, int maxHp,
+                 const std::vector<Move> &moves, bool isCaptured) : id(id), name(name), type(type),
+                                                                    currentHP(currentHp), maxHP(maxHp), moves(moves),
+                                                                    isCaptured(isCaptured) {}
+                                                                    
 void Pokemon::rename(std::string newPokemonName) {
     this->pokemonName = newPokemonName;
 }
