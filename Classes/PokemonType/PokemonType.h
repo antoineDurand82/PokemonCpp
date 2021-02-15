@@ -23,9 +23,7 @@ public:
                 const std::vector<std::string> &strongAgainst, const std::vector<std::string> &notEffectiveAgainst,
                 const std::vector<std::string> &weakTo, const std::vector<std::string> &resistTo,
                 const std::vector<std::string> &immuneTo);
-
-    PokemonType();
-
+    
     const std::string &getName() const;
 
     const std::vector<std::string> &getWeakAgainst() const;
