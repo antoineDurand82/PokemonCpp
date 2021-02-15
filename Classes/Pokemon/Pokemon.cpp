@@ -74,7 +74,7 @@ void Pokemon::setMoves(const std::vector<Move> &moves) {
     Pokemon::moves = moves;
 }
 
-bool Pokemon::isCaptured1() const {
+bool Pokemon::getIsCaptured() const {
     return isCaptured;
 }
 

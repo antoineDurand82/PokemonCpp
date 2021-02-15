@@ -58,9 +58,9 @@ public:
 
     void setMoves(const std::vector<Move> &moves);
 
-    bool isCaptured1() const;
-
     void setIsCaptured(bool isCaptured);
+
+    bool getIsCaptured() const;
 };
 
 
