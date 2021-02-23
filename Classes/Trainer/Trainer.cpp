@@ -3,6 +3,8 @@
 //
 
 #include "Trainer.h"
+#include <iostream>
+using namespace std;
 
 Trainer::Trainer(int id, const std::string &name, const std::vector<Pokemon> &teams, const std::vector<Pokemon> &pc,
                  int money, const std::vector<Item> &inventory) : id(id), name(name), teams(teams), pc(pc),
@@ -54,4 +56,21 @@ const std::vector<Item> &Trainer::getInventory() const {
 
 void Trainer::setInventory(const std::vector<Item> &inventory) {
     Trainer::inventory = inventory;
+}
+
+Pokemon Trainer::searchWildPokemon() {
+    int biomeChoiced;
+    // searchWildPokemon: demande le lieu puis sort un pokemon aléatoire d'une liste suivant le lieu (plaine, grotte, océan, ciel)
+    cout << "Vous avez le choix entre 5 biomes différents: " << endl;
+    cout << "----------------------------------------------" << endl;
+    cout << "1. La plaine" << endl;
+    cout << "2. La montagne" << endl;
+    cout << "3. La grotte" << endl;
+    cout << "4. L'océan" << endl;
+    cout << "5. Le ciel" << endl;
+    cout << "----------------------------------------------" << endl;
+    cout << "Pour sélectionner l'un de ces biomes vous avez juste à entrer le chiffre correspondant :" << endl;
+    cin >> biomeChoiced;
+
+    return Pokemon();
 }

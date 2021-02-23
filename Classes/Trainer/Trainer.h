@@ -50,6 +50,9 @@ public:
 
     void setInventory(const std::vector<Item> &inventory);
 
+    Pokemon searchWildPokemon();
+
+
 
 };
 
