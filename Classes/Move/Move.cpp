@@ -8,6 +8,8 @@ Move::Move(const std::string &name, const PokemonType &type, int power, int accu
            int maxPowerPoints) : name(name), type(type), power(power), accuracy(accuracy), powerPoints(powerPoints),
                                  maxPowerPoints(maxPowerPoints) {}
 
+Move::Move() {}
+
 const std::string &Move::getName() const {
     return name;
 }

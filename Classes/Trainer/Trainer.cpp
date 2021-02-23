@@ -3,12 +3,18 @@
 //
 
 #include "Trainer.h"
+#include "../EnumLocation/Location.h"
 #include <iostream>
+#include <stdlib.h>
+#include "../../data/Init/Init.h"
+
 using namespace std;
 
 Trainer::Trainer(int id, const std::string &name, const std::vector<Pokemon> &teams, const std::vector<Pokemon> &pc,
                  int money, const std::vector<Item> &inventory) : id(id), name(name), teams(teams), pc(pc),
                                                                   money(money), inventory(inventory) {}
+
+Trainer::Trainer() {}
 
 int Trainer::getId() const {
     return id;
@@ -18,7 +24,7 @@ void Trainer::setId(int id) {
     Trainer::id = id;
 }
 
-const std::string &Trainer::getName() const {
+const string &Trainer::getName() const {
     return name;
 }
 
@@ -59,7 +65,7 @@ void Trainer::setInventory(const std::vector<Item> &inventory) {
 }
 
 Pokemon Trainer::searchWildPokemon() {
-    int biomeChoiced;
+    unsigned short biomeChoiced;
     // searchWildPokemon: demande le lieu puis sort un pokemon aléatoire d'une liste suivant le lieu (plaine, grotte, océan, ciel)
     cout << "Vous avez le choix entre 5 biomes différents: " << endl;
     cout << "----------------------------------------------" << endl;
@@ -71,6 +77,29 @@ Pokemon Trainer::searchWildPokemon() {
     cout << "----------------------------------------------" << endl;
     cout << "Pour sélectionner l'un de ces biomes vous avez juste à entrer le chiffre correspondant :" << endl;
     cin >> biomeChoiced;
-
-    return Pokemon();
+    cin.clear();
+    cin.ignore(1000, '\n');
+    Location choice; // création location vide
+    switch (biomeChoiced) {
+        case 1:
+            choice = Plaine;
+            break;
+        case 2:
+            choice = Montagne;
+            break;
+        case 3:
+            choice = Grotte;
+            break;
+        case 4:
+            choice = Ocean;
+            break;
+        case 5:
+            choice = Ciel;
+            break;
+        default:
+            cout << "Tu dois me donner un chiffre parmis ceux proposés";
+            return searchWildPokemon();
+    }
+    vector<Pokemon> listPokemon = choice.getListPokemon();
+    return listPokemon[rand() % listPokemon.size()];
 }

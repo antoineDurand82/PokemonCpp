@@ -15,6 +15,8 @@ PokemonType::PokemonType(const std::string &name, const std::vector<std::string>
                                                                                                                immuneTo(
                                                                                                                        immuneTo) {}
 
+PokemonType::PokemonType() {}
+
 const std::string &PokemonType::getName() const {
     return name;
 }

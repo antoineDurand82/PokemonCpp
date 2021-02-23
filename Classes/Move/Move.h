@@ -21,6 +21,8 @@ public:
     Move(const std::string &name, const PokemonType &type, int power, int accuracy, int powerPoints,
          int maxPowerPoints);
 
+    Move();
+
     const std::string &getName() const;
 
     void setName(const std::string &name);

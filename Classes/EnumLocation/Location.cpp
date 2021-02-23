@@ -19,3 +19,8 @@ const std::vector<Pokemon> &Location::getListPokemon() const {
 void Location::setListPokemon(const std::vector<Pokemon> &listPokemon) {
     Location::listPokemon = listPokemon;
 }
+
+Location::Location(const std::string &name, const std::vector<Pokemon> &listPokemon) : name(name),
+                                                                                       listPokemon(listPokemon) {}
+
+Location::Location() {}

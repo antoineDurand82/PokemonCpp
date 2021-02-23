@@ -20,6 +20,10 @@ public:
     const std::vector<Pokemon> &getListPokemon() const;
 
     void setListPokemon(const std::vector<Pokemon> &listPokemon);
+
+    Location(const std::string &name, const std::vector<Pokemon> &listPokemon);
+
+    Location();
 };
 
 

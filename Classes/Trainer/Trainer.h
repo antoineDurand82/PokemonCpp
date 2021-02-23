@@ -26,6 +26,8 @@ public:
     Trainer(int id, const std::string &name, const std::vector<Pokemon> &teams, const std::vector<Pokemon> &pc,
             int money, const std::vector<Item> &inventory);
 
+    Trainer();
+
     int getId() const;
 
     void setId(int id);
