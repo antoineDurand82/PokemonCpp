@@ -64,6 +64,12 @@ public:
     bool getIsCaptured() const;
 
     std::vector<Move> moves;
+
+    void showMoves();
+
+    int randomAttack();
+
+    std::string hpleftOnHpmax();
 };
 
 

@@ -50,10 +50,19 @@ public:
 
     void setInventory(const std::vector<Item> &inventory);
 
-    Pokemon searchWildPokemon();
-    std::vector<Pokemon> teams;
-    std::vector<Pokemon> pc;
+    void searchWildPokemon();
 
+    void runAway();
+
+    void chooseAction(Pokemon *pokemonChoosed, Pokemon *wildPokemon);
+
+    void useItem();
+
+    void changePokemon();
+
+    void chooseAttack(Pokemon *pokemonChoosed, Pokemon *wildPokemon);
+
+    void battle(Pokemon *wildPokemon);
 };
 
 

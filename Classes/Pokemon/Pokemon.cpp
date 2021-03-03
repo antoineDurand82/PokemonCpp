@@ -3,6 +3,7 @@
 //
 
 #include "Pokemon.h"
+#include <iostream>
 
 Pokemon::Pokemon(int id, const std::string &name, const PokemonType &type, int currentHp, int maxHp,
                  const std::vector<Move> &moves, bool isCaptured) : id(id), name(name), type(type),
@@ -82,5 +83,20 @@ bool Pokemon::getIsCaptured() const {
 
 void Pokemon::setIsCaptured(bool isCaptured) {
     Pokemon::isCaptured = isCaptured;
+}
+
+void Pokemon::showMoves(){
+    for (int i = 0; i < this->getMoves().size(); ++i) {
+        std::cout << i + 1 << ". " << this->getMoves()[i].getName() << "       " << this->getMoves()[i].getPowerPoints() << "/" << this->getMoves()[i].getMaxPowerPoints() << std::endl;
+    }
+    return;
+}
+
+int Pokemon::randomAttack(){
+    return this->useTM(this->getMoves()[rand() % this->getMoves().size() - 1]);
+}
+
+std::string Pokemon::hpleftOnHpmax(){
+    return std::to_string(this->getCurrentHp()) + " / " + std::to_string(this->getMaxHp());
 }
 
