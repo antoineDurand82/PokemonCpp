@@ -1,8 +1,19 @@
 //
-// Created by notitou on 15/02/2021.
+// Created by antoi on 23/02/2021.
 //
 
-#include "pokemonTypes.h"
+#include "Init.h"
+
+
+using namespace std;
+
+int log_types(){
+    cout << "----------------------------------------------" << endl;
+    cout << "Initialisation des types en cours :" << endl;
+    return 1;
+}
+
+int a = log_types();
 
 PokemonType ACIER = {"ACIER", {"ACIER", "EAU", "ELECTRIK", "FEU"}, {"FEE", "GLACE", "ROCHE"}, {}, {"COMBAT", "FEU", "SOL"}, {"ACIER", "DRAGON", "FEE", "VOL", "INSECTE", "PLANTE", "GLACE", "NORMAL", "PSY", "ROCHE"}, {"POISON"}};
 PokemonType COMBAT = {"COMBAT", {"INSECTE", "FEE", "VOL", "POISON", "PSY"}, {"TENEBRES", "GLACE", "NORMAL", "ROCHE", "ACIER"}, {"SPECTRE"}, {"FEE", "VOL", "PSY"}, {"INSECTE", "TENEBRES", "ROCHE"}, {}};
@@ -22,3 +33,64 @@ PokemonType SOL = {"SOL", {"INSECTE", "PLANTE"}, {"ELECTRIK", "FEU", "POISON", "
 PokemonType SPECTRE = {"SPECTRE", {"TENEBRES"}, {"SPECTRE", "PSY"}, {"NORMAL"}, {"TENEBRES", "SPECTRE"}, {"INSECTE", "POISON"}, {"COMBAT", "NORMAL"}};
 PokemonType TENEBRES = {"TENEBRES", {"TENEBRES", "FEE", "COMBAT"}, {"SPECTRE", "PSY"}, {}, {"INSECTE", "FEE", "COMBAT"}, {"TENEBRES", "SPECTRE"}, {"PSY"}};
 PokemonType VOL = {"VOL", {"ELECTRIK", "ROCHE", "ACIER"}, {"INSECTE", "COMBAT", "PLANTE"}, {}, {"ELECTRIK", "GLACE", "ROCHE"}, {"INSECTE", "COMBAT", "PLANTE"}, {"SOL"}};
+
+int log_moves(){
+    cout << "Initialisation des types réussi !" << endl;
+    cout << "----------------------------------------------" << endl;
+    cout << "\n" << endl;
+    cout << "----------------------------------------------" << endl;
+    cout << "Initialisation des attaques en cours :" << endl;
+    return 1;
+}
+
+int b = log_moves();
+
+Move Charge = {"Charge", NORMAL, 40, 100, 40, 40};
+
+
+int log_pokemons(){
+    cout << "Initialisation des attaques réussi !" << endl;
+    cout << "----------------------------------------------" << endl;
+    cout << "\n" << endl;
+    cout << "----------------------------------------------" << endl;
+    cout << "Création des pokémons en cours :" << endl;
+    return 1;
+}
+
+int c = log_pokemons();
+
+Pokemon Darkrai = Pokemon(1, "Darkrai", TENEBRES, 250, 250, {Charge}, false);
+Pokemon Keunotor = Pokemon(1, "Keunotor", NORMAL, 250, 250, {Charge}, false);
+Pokemon Racaillou = Pokemon(1, "Racaillou", ROCHE, 250, 250, {Charge}, false);
+Pokemon Wailmer = Pokemon(1, "Wailmer", EAU, 250, 250, {Charge}, false);
+Pokemon HoOh = Pokemon(1, "Ho-Oh", VOL, 250, 250, {Charge}, false);
+Pokemon Blizzi = Pokemon(1, "Blizzi", GLACE, 250, 250, {Charge}, false);
+
+int log_locations(){
+    cout << "Tous les pokemons sont nés !" << endl;
+    cout << "----------------------------------------------" << endl;
+    cout << "\n" << endl;
+    cout << "----------------------------------------------" << endl;
+    cout << "Exploration de la région Hoenn :" << endl;
+    return 1;
+}
+
+int d = log_locations();
+
+Location Plaine = Location("Plaine", {Darkrai, Keunotor});
+Location Montagne = Location("Montagne", {Darkrai, Racaillou});
+Location Grotte = Location("Grotte", {Darkrai, Blizzi});
+Location Ocean = Location("Ocean", {Darkrai, Wailmer});
+Location Ciel = Location("Ciel", {Darkrai, HoOh});
+
+int log_end(){
+    cout << "Vous avez découvert le monde Hoenn !" << endl;
+    cout << "----------------------------------------------" << endl;
+    cout << "\n" << endl;
+    cout << "----------------------------------------------" << endl;
+    cout << "Initialisation terminée, amusez vous bien !" << endl;
+    cout << "\n" << endl;
+    return 1;
+}
+
+int e = log_end();
