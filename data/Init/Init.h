@@ -16,6 +16,7 @@
 #include "../../Classes/Items/Potions/SuperPotion/SuperPotion.h"
 #include "../../Classes/Items/Potions/HyperPotion/HyperPotion.h"
 #include "../../Classes/Items/Potions/PotionMax/PotionMax.h"
+#include "../../Classes/Items/Pokeballs/SuperBall/SuperBall.h"
 
 // Extern des pokemon type
 // -----------------------------
