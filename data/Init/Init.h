@@ -36,17 +36,140 @@ extern PokemonType VOL;
 // Extern des moves
 // -----------------------------
 
+// Attaque Acier
+extern Move TeteDeFer;
+extern Move QueueDeFer;
+extern Move Luminocanon;
+extern Move GriffeAcier;
+
+// Attaque Combat
+extern Move Balayette;
+extern Move CasseBrique;
+extern Move Aurasphere;
+extern Move Exploforce;
+
+// Attaque Dragon
+extern Move Colere;
+extern Move DracoGriffe;
+extern Move HurleTemps;
+extern Move DracoMeteor;
+
+// Attaque Eau
+extern Move PistoletAO;
+extern Move Surf;
+extern Move Cascade;
+extern Move Hydrocanon;
+
+// Attaque Electrik
+extern Move Eclair;
+extern Move Tonnerre;
+extern Move FatalFoudre;
+extern Move Etincelle;
+
+// Attaque Fee
+extern Move VoixEnjoleuse;
+extern Move Calinerie;
+extern Move EclatMagique;
+extern Move PouvoirLunaire;
+
+// Attaque Feu
+extern Move Flammeche;
+extern Move LanceFlamme;
+extern Move RoueDeFeu;
+extern Move Deflagration;
+
+// Attaque Glace
+extern Move VentGlace;
+extern Move LaserGlace;
+extern Move Blizzard;
+extern Move Avalanche;
+
+// Attaque Insecte
+extern Move Taillade;
+extern Move Piqure;
+extern Move PlaieCroix;
+extern Move Bourdon;
+
+// Attaque Normal
 extern Move Charge;
+extern Move Coupe;
+extern Move Ultimawashi;
+extern Move GigaImpact;
+extern Move ViveAttaque;
+extern Move VitesseExtreme;
+
+// Attaque Plante
+extern Move TranchHerbe;
+extern Move FouetLianes;
+extern Move LameFeuille;
+extern Move TempeteVerte;
+
+// Attaque Poison
+extern Move DardVenin;
+extern Move BombeBeurk;
+extern Move DirectToxik;
+extern Move Detritus;
+
+// Attaque Psy
+extern Move ChocMental;
+extern Move RafalePsy;
+extern Move Psyko;
+extern Move PsykoudBoul;
+
+// Attaque Roche
+extern Move JetPierres;
+extern Move Tomberoche;
+extern Move PouvoirAntique;
+extern Move LameDeRoc;
+
+// Attaque Sol
+extern Move Pietisol;
+extern Move Seisme;
+extern Move TirDeBoue;
+extern Move Telluriforce;
+
+// Attaque Spectre
+extern Move Etonnement;
+extern Move Lechouille;
+extern Move BallOmbre;
+extern Move VentMauvais;
+
+// Attaque Ténèbres
+extern Move Assurance;
+extern Move Morsure;
+extern Move Machouille;
+extern Move Vibrobscur;
+
+// Attaque Vol
+extern Move Picpic;
+extern Move Aeropique;
+extern Move Rapace;
+extern Move LameDAir;
 
 // Extern des pokemons
 // -----------------------------
 
 extern Pokemon Darkrai;
-extern Pokemon Keunotor;
-extern Pokemon Racaillou;
-extern Pokemon Wailmer;
-extern Pokemon HoOh;
-extern Pokemon Blizzi;
+extern Pokemon Registeel;
+extern Pokemon Pachyradjah;
+extern Pokemon Hariyama;
+extern Pokemon Colossinge;
+extern Pokemon Tranchodon;
+extern Pokemon Muplodocus;
+extern Pokemon Tortank;
+extern Pokemon Wailord;
+extern Pokemon Raichu;
+extern Pokemon Luxrai;
+extern Pokemon Melodelfe;
+extern Pokemon Nymphali;
+extern Pokemon Arcanin;
+extern Pokemon Typhlosion;
+extern Pokemon Oniglali;
+extern Pokemon Polagriffe;
+extern Pokemon Scarabrute;
+extern Pokemon Melokrik;
+extern Pokemon Ronflex;
+extern Pokemon Kangourex;
 
 // Extern des locations
 // -----------------------------
