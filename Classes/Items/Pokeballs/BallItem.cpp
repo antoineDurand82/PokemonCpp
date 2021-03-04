@@ -3,12 +3,8 @@
 //
 
 #include "BallItem.h"
-<<<<<<< HEAD
-
-BallItem::BallItem(int id, const std::string &name, int price, int catchRate) : Item(id, name, price),
-                                                                                catchRate(catchRate) {}
-=======
 #include <iostream>
+#include "../../Pokemon/Pokemon.h"
 
 BallItem::BallItem(int id, const std::string &name, int price, int catchRate) : Item(id, name, price),
                                                                                 catchRate(catchRate) {}
@@ -33,9 +29,8 @@ void BallItem::use(Pokemon pokemon) {
     bool canCatch = tryCatch(pokemon);
 
     if(!canCatch){
-        std::cout << "La capture a échoué." << endl;
+        std::cout << "La capture a échoué." << std::endl;
     }else{
         std::cout << pokemon.getName() << " a été capturé !" << std::endl;
     }
 }
->>>>>>> 966279dd5a88c938e9269b1f5a6f8a63aaa1ad9c

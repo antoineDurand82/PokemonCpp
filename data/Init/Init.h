@@ -11,12 +11,12 @@
 #include "../../Classes/Pokemon/Pokemon.h"
 #include "../../Classes/EnumLocation/Location.h"
 #include "../../Classes/Items/Pokeballs/Pokeball/Pokeball.h"
-#include "../Pokeballs/Pokeballs.h"
 #include "../../Classes/Items/Potions/Potion/Potion.h"
 #include "../../Classes/Items/Potions/SuperPotion/SuperPotion.h"
 #include "../../Classes/Items/Potions/HyperPotion/HyperPotion.h"
 #include "../../Classes/Items/Potions/PotionMax/PotionMax.h"
-#include "../../Classes/Items/Pokeballs/SuperBall/SuperBall.h"
+#include "../../Classes/Items/Pokeballs/SuperBall/Superball.h"
+#include "../../Classes/Items/Pokeballs/Hyperball/Hyperball.h"
 
 // Extern des pokemon type
 // -----------------------------
