@@ -3,6 +3,12 @@
 //
 
 #include "Init.h"
+#include "../../Classes/Items/Pokeballs/Pokeball/Pokeball.h"
+#include "../Pokeballs/Pokeballs.h"
+#include "../../Classes/Items/Potions/Potion/Potion.h"
+#include "../../Classes/Items/Potions/HyperPotion/HyperPotion.h"
+#include "../../Classes/Items/Potions/SuperPotion/SuperPotion.h"
+#include "../../Classes/Items/Potions/PotionMax/PotionMax.h"
 
 
 using namespace std;
@@ -258,8 +264,28 @@ Pokemon Absol = {34, "Absol", TENEBRES, 200, 200, {Morsure, Machouille, Vibrobsc
 Pokemon Boreas = {35, "Boréas", VOL, 300, 300, {Aeropique, LameDAir, FatalFoudre, Charge}, false};
 Pokemon Roucarnage = {36, "Roucarnage", VOL, 200, 200, {Picpic, Aeropique, Rapace, LameDAir}, false};
 
-int log_locations(){
+int log_items(){
     cout << "Tous les pokemons sont nés !" << endl;
+    cout << "----------------------------------------------" << endl;
+    cout << "\n" << endl;
+    cout << "----------------------------------------------" << endl;
+    cout << "Création Items :" << endl;
+    return 1;
+}
+
+int d = log_items();
+
+Pokeball Pokeball = {1, "Pokeball", 200, 40};
+Superball SuperBall = {2, "SuperBall", 600, 60};
+Hyperball HyperBall = {3, "HyperBall", 1200, 80};
+
+Potion PotionItem = {1, "Potion", 300, 20};
+SuperPotion SuperPotionItem = {2, "SuperPotion", 700, 50};
+HyperPotion HyperPotionItem = {3, "HyperPotion", 1200, 120};
+PotionMax PotionMaxItem = {4, "PotionMax", 2500, 999};
+
+int log_locations(){
+    cout << "Tous les items sont créés !" << endl;
     cout << "----------------------------------------------" << endl;
     cout << "\n" << endl;
     cout << "----------------------------------------------" << endl;
@@ -267,7 +293,7 @@ int log_locations(){
     return 1;
 }
 
-int d = log_locations();
+int e = log_locations();
 
 Location Plaine = Location("Plaine", {Majaspic, Arcanin});
 Location Montagne = Location("Montagne", {Charkos, Gigalithe});
@@ -285,4 +311,4 @@ int log_end(){
     return 1;
 }
 
-int e = log_end();
+int f = log_end();
