@@ -167,11 +167,8 @@ int log_pokemons(){
 
 int c = log_pokemons();
 
-Pokemon Keunotor = Pokemon(1, "Keunotor", NORMAL, 250, 250, {Charge}, false);
-Pokemon Racaillou = Pokemon(1, "Racaillou", ROCHE, 250, 250, {Charge}, false);
-Pokemon Wailmer = Pokemon(1, "Wailmer", EAU, 250, 250, {Charge}, false);
-Pokemon HoOh = Pokemon(1, "Ho-Oh", VOL, 250, 250, {Charge}, false);
-Pokemon Blizzi = Pokemon(1, "Blizzi", GLACE, 250, 250, {Charge}, false);
+
+// Pokemon Acier
 
 Pokemon Registeel = {2, "Registeel", ACIER, 250, 250, {Charge, GriffeAcier, Luminocanon}, false};
 Pokemon Pachyradjah = {3, "Pachyradjah", ACIER, 250, 250, {Charge, TeteDeFer, QueueDeFer}, false};
@@ -272,11 +269,11 @@ int log_locations(){
 
 int d = log_locations();
 
-Location Plaine = Location("Plaine", {Darkrai, Keunotor});
-Location Montagne = Location("Montagne", {Darkrai, Racaillou});
-Location Grotte = Location("Grotte", {Darkrai, Blizzi});
-Location Ocean = Location("Ocean", {Darkrai, Wailmer});
-Location Ciel = Location("Ciel", {Darkrai, HoOh});
+Location Plaine = Location("Plaine", {Majaspic, Arcanin});
+Location Montagne = Location("Montagne", {Charkos, Gigalithe});
+Location Grotte = Location("Grotte", {Darkrai, Registeel});
+Location Ocean = Location("Ocean", {Tortank, Wailord});
+Location Ciel = Location("Ciel", {Boreas, Roucarnage});
 
 int log_end(){
     cout << "Vous avez découvert le monde Hoenn !" << endl;
