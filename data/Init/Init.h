@@ -10,6 +10,13 @@
 #include "../../Classes/Move/Move.h"
 #include "../../Classes/Pokemon/Pokemon.h"
 #include "../../Classes/EnumLocation/Location.h"
+#include "../../Classes/Items/Pokeballs/Pokeball/Pokeball.h"
+#include "../../Classes/Items/Potions/Potion/Potion.h"
+#include "../../Classes/Items/Potions/SuperPotion/SuperPotion.h"
+#include "../../Classes/Items/Potions/HyperPotion/HyperPotion.h"
+#include "../../Classes/Items/Potions/PotionMax/PotionMax.h"
+#include "../../Classes/Items/Pokeballs/SuperBall/Superball.h"
+#include "../../Classes/Items/Pokeballs/Hyperball/Hyperball.h"
 
 // Extern des pokemon type
 // -----------------------------
@@ -180,4 +187,15 @@ extern Location Grotte;
 extern Location Montagne;
 extern Location Ciel;
 
+// Extern Items
+// -----------------------------
+
+extern Pokeball PokeBall;
+extern Superball SuperBall;
+extern Hyperball HyperBall;
+
+extern Potion PotionItem;
+extern SuperPotion SuperPotionItem;
+extern HyperPotion HyperPotionItem;
+extern PotionMax PotionMaxItem;
 #endif //POKEMONCPP_INIT_H

@@ -1,20 +1,18 @@
 //
-// Created by antoi on 25/01/2021.
+// Created by notitou on 15/02/2021.
 //
-#include <iostream>
-#include <vector>
 
 #ifndef POKEMONCPP_ITEM_H
 #define POKEMONCPP_ITEM_H
+#include <iostream>
 
 
 class Item {
-
-private:
+public:
     int id;
     std::string name;
-    int prince;
-
+    int price;
+    Item(int id, const std::string &name, int price);
 };
 
 

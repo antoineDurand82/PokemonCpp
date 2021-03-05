@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include "../Pokemon/Pokemon.h"
-#include "../Item/Item.h"
+#include "../Items/Item/Item.h"
 #include <vector>
 
 #ifndef POKEMONCPP_TRAINER_H
