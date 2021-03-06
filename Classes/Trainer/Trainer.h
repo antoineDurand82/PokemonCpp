@@ -52,17 +52,19 @@ public:
 
     void searchWildPokemon();
 
-    void runAway();
+    void runAway(bool *pBoolean);
 
-    void chooseAction(Pokemon *pokemonChoosed, Pokemon *wildPokemon);
+    void chooseAction(Pokemon *pokemonChoosed, Pokemon *wildPokemon, bool *pBoolean, const std::vector<Move> *pokemonMoves);
 
     void useItem();
 
-    void changePokemon();
+    void changePokemon(Pokemon *pPokemon);
 
-    void chooseAttack(Pokemon *pokemonChoosed, Pokemon *wildPokemon);
+    void chooseAttack(Pokemon *pokemonChoosed, Pokemon *wildPokemon, const std::vector<Move> *pokemonMoves);
 
     void battle(Pokemon *wildPokemon);
+
+    void getTeamsToString();
 };
 
 

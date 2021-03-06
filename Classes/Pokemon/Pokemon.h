@@ -10,6 +10,8 @@
 #include <vector>
 
 
+
+
 class Pokemon {
     private:
 
@@ -28,8 +30,6 @@ public:
     Pokemon();
 
     void rename(std::string pokemonName);
-
-    int useTM(Move move);
 
     int getId() const;
 
@@ -69,7 +69,13 @@ public:
 
     int randomAttack();
 
-    std::string hpleftOnHpmax();
+    std::string hpleftOnHpmax() const;
+
+    bool canUseTM(Move *move);
+
+    int useTM(Move *move);
+
+    bool checkAlived();
 };
 
 

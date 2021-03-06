@@ -77,22 +77,22 @@ Move Cascade = {"Cascade", EAU, 80, 100, 15, 15};
 Move Hydrocanon = {"Hydrocanon", EAU, 110, 80, 5, 5};
 
 // Attaque Electrik
-Move Eclair = {"Éclair", ELECTRIK, 40, 100, 30, 30};
+Move Eclair = {"\202clair", ELECTRIK, 40, 100, 30, 30};
 Move Tonnerre = {"Tonnerre", ELECTRIK, 90, 100, 15, 15};
 Move FatalFoudre = {"Fatal-Foudre", ELECTRIK, 110, 70, 10, 10};
-Move Etincelle = {"Étincelle", ELECTRIK, 120, 100, 15, 15};
+Move Etincelle = {"\202tincelle", ELECTRIK, 120, 100, 15, 15};
 
 // Attaque Fee
 Move VoixEnjoleuse = {"Voix enjôleuse", FEE, 40, 100, 15, 15};
 Move Calinerie = {"Câlinerie", FEE, 90, 90, 10, 10};
-Move EclatMagique = {"Éclat Magique", FEE, 80, 100, 10, 10};
+Move EclatMagique = {"\202clat Magique", FEE, 80, 100, 10, 10};
 Move PouvoirLunaire = {"Pouvoir Lunaire", FEE, 95, 100, 15, 15};
 
 // Attaque Feu
 Move Flammeche = {"Flamm\212che", FEU, 40, 100, 25, 25};
 Move LanceFlamme = {"LanceFlamme", FEU, 90, 100, 15, 15};
 Move RoueDeFeu = {"Roue de Feu", FEU, 60, 100, 25, 25};
-Move Deflagration = {"Flamm\212che", FEU, 110, 85, 5, 5};
+Move Deflagration = {"D\202flagration", FEU, 110, 85, 5, 5};
 
 // Attaque Glace
 Move VentGlace = {"Vent Glac\202", GLACE, 55, 95, 15, 15};
@@ -145,7 +145,7 @@ Move TirDeBoue = {"Tir de Boue", SOL, 55, 95, 15, 15};
 Move Telluriforce = {"Telluriforce", SOL, 90, 100, 10, 10};
 
 // Attaque Spectre
-Move Etonnement = {"Étonnement", SPECTRE, 30, 100, 15, 15};
+Move Etonnement = {"\202tonnement", SPECTRE, 30, 100, 15, 15};
 Move Lechouille = {"L\202chouille", SPECTRE, 30, 100, 30, 30};
 Move BallOmbre = {"Ball'Ombre", SPECTRE, 80, 100, 15, 15};
 Move VentMauvais = {"Vent Mauvais", SPECTRE, 60, 100, 5, 5};

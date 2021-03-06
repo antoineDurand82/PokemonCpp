@@ -4,21 +4,30 @@
 
 #include "Pokemon.h"
 #include <iostream>
+using namespace std;
 
-Pokemon::Pokemon(int id, const std::string &name, const PokemonType &type, int currentHp, int maxHp,
-                 const std::vector<Move> &moves, bool isCaptured) : id(id), name(name), type(type),
+Pokemon::Pokemon(int id, const string &name, const PokemonType &type, int currentHp, int maxHp,
+                 const vector<Move> &moves, bool isCaptured) : id(id), name(name), type(type),
                                                                     currentHP(currentHp), maxHP(maxHp), moves(moves),
                                                                     isCaptured(isCaptured) {}
 
 Pokemon::Pokemon() {}
 
-void Pokemon::rename(std::string newPokemonName) {
+void Pokemon::rename(string newPokemonName) {
     setPokemonName(newPokemonName);
 }
 
-int Pokemon::useTM(Move move){
-    int hp = move.getPower() * 0.33;
+int Pokemon::useTM(Move *move){
+    int hp = move->getPower() * 0.33;
+    move->setPowerPoints(move->getPowerPoints() - 1);
     return hp;
+}
+
+bool Pokemon::canUseTM(Move *move){
+    if(move->getPowerPoints() > 0){
+        return true;
+    }
+    return false;
 }
 
 int Pokemon::getId() const {
@@ -29,19 +38,19 @@ void Pokemon::setId(int id) {
     Pokemon::id = id;
 }
 
-const std::string &Pokemon::getPokemonName() const {
+const string &Pokemon::getPokemonName() const {
     return pokemonName;
 }
 
-void Pokemon::setPokemonName(const std::string &pokemonName) {
+void Pokemon::setPokemonName(const string &pokemonName) {
     Pokemon::pokemonName = pokemonName;
 }
 
-const std::string &Pokemon::getName() const {
+const string &Pokemon::getName() const {
     return name;
 }
 
-void Pokemon::setName(const std::string &name) {
+void Pokemon::setName(const string &name) {
     Pokemon::name = name;
 }
 
@@ -69,11 +78,11 @@ void Pokemon::setMaxHp(int maxHp) {
     maxHP = maxHp;
 }
 
-const std::vector<Move> &Pokemon::getMoves() {
+const vector<Move> &Pokemon::getMoves() {
     return moves;
 }
 
-void Pokemon::setMoves(const std::vector<Move> &moves) {
+void Pokemon::setMoves(const vector<Move> &moves) {
     Pokemon::moves = moves;
 }
 
@@ -87,16 +96,28 @@ void Pokemon::setIsCaptured(bool isCaptured) {
 
 void Pokemon::showMoves(){
     for (int i = 0; i < this->getMoves().size(); ++i) {
-        std::cout << i + 1 << ". " << this->getMoves()[i].getName() << "       " << this->getMoves()[i].getPowerPoints() << "/" << this->getMoves()[i].getMaxPowerPoints() << std::endl;
+        cout << i + 1 << ". " << this->getMoves()[i].getName() << "       " << this->getMoves()[i].getPowerPoints() << "/" << this->getMoves()[i].getMaxPowerPoints() << endl;
     }
     return;
 }
 
 int Pokemon::randomAttack(){
-    return this->useTM(this->getMoves()[rand() % this->getMoves().size() - 1]);
+    Move *attackUsed =  &this->moves[rand() % this->moves.size()];
+    if(this->canUseTM(attackUsed)){
+        cout << this->getName() << " a utilis\202 " << attackUsed->getName() << endl;
+        return this->useTM(attackUsed);
+    }
+    return randomAttack();
 }
 
-std::string Pokemon::hpleftOnHpmax(){
-    return std::to_string(this->getCurrentHp()) + " / " + std::to_string(this->getMaxHp());
+string Pokemon::hpleftOnHpmax() const {
+    return to_string(this->getCurrentHp()) + " / " + to_string(this->getMaxHp());
+}
+
+bool Pokemon::checkAlived(){
+    if(this->getCurrentHp() > 0){
+        return true;
+    }
+    return false;
 }
 
