@@ -108,6 +108,7 @@ void Trainer::searchWildPokemon() {
             return searchWildPokemon();
     }
     vector<Pokemon> listPokemon = choice.getListPokemon();
+    // peut être ajouter un vector de pokemon venant de getTeam et le donner à battle pour avoir la team de charger pendant le fight
     Pokemon wildPokemon = listPokemon[rand() % listPokemon.size()];
     battle(&wildPokemon);
     return;
@@ -352,7 +353,3 @@ void Trainer::chooseAttack(Pokemon *pokemonChoosed, Pokemon *wildPokemon, const 
     return;
 
 }
-
-
-
-// faire un while je sais pas encore où pour automatis\202 le combat
