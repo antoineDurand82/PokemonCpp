@@ -7,23 +7,23 @@
 #include <iostream>
 using namespace std;
 
-PokemonCenter::PokemonCenter(int id, const std::string &name) : Building(id, name) {}
+PokemonCenter::PokemonCenter(int id, const string &name) : Building(id, name) {}
 
 void PokemonCenter::healPokemons(Trainer *trainer) {
     for(unsigned i=0; i < trainer->teams.size(); ++i){
-        std::cout << trainer->teams[i].getName() << std::endl;
+        cout << trainer->teams[i].getName() << endl;
         trainer->teams[i].setCurrentHp(trainer->teams[i].getMaxHp());
         for(unsigned j=0; j < trainer->teams[i].moves.size(); ++j){
             trainer->teams[i].moves[j].setPowerPoints(trainer->teams[i].moves[j].getMaxPowerPoints());
         }
     }
-    std::cout << "Tous vos pokémons ont été soigné !" << std::endl;
+    cout << "Tous vos pok\202mons ont \202t\202 soign\202 !" << endl;
 }
 
 
 void PokemonCenter::goToPC(Trainer *trainer) {
     unsigned short actionChoosed;
-    // chooseAction: demande à l'utilisateur quelle action il souhaite faire
+    // chooseAction: demande \205 l'utilisateur quelle action il souhaite faire
     cout << "Que souhaitez vous faire ?" << endl;
     cout << "Vous avez le choix entre 2 actions diff\202rents: " << endl;
     cout << "----------------------------------------------" << endl;

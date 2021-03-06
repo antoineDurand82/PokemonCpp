@@ -142,7 +142,7 @@ extern Move Lechouille;
 extern Move BallOmbre;
 extern Move VentMauvais;
 
-// Attaque Ténèbres
+// Attaque T\202n\212bres
 extern Move Assurance;
 extern Move Morsure;
 extern Move Machouille;
