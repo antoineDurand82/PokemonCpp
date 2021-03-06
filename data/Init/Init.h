@@ -210,10 +210,8 @@ extern Pokeball PokeBall;
 extern Superball SuperBall;
 extern Hyperball HyperBall;
 
-extern Potion PotionItem;
-extern SuperPotion SuperPotionItem;
-extern HyperPotion HyperPotionItem;
-extern PotionMax PotionMaxItem;
-
-extern PokemonCenter pokemonCenter;
+extern HealItem PotionItem;
+extern HealItem SuperPotionItem;
+extern HealItem HyperPotionItem;
+extern HealItem PotionMaxItem;
 #endif //POKEMONCPP_INIT_H

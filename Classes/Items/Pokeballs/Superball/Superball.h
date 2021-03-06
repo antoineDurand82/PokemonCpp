@@ -11,7 +11,8 @@
 
 class Superball : public BallItem {
 public:
-    Superball(int id, const std::string &name, int price, int catchRate);
+
+    Superball(int id, const std::string &name, int price, int catchRate, const std::string &type);
 };
 
 

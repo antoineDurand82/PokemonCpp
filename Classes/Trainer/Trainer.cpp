@@ -11,10 +11,8 @@
 using namespace std;
 
 Trainer::Trainer(int id, const string &name, const vector<Pokemon> &teams, const vector<Pokemon> &pc,
-                 int money, const vector<Item> &inventory) : id(id), name(name), teams(teams), pc(pc),
-                                                                  money(money), inventory(inventory) {}
-
-Trainer::Trainer() {}
+                 int money, const std::vector<HealItem> &healInventory, const std::vector<BallItem> &ballInventory) : id(id), name(name), teams(teams), pc(pc),
+                                                                  money(money), healInventory(healInventory), ballInventory(ballInventory) {}
 
 int Trainer::getId() const {
     return id;
@@ -38,7 +36,7 @@ const vector<Pokemon> &Trainer::getTeams() const {
 
 void Trainer::getTeamsToString(){
     for (int i = 0; i < this->getTeams().size(); ++i) {
-        cout << i + 1 << ". " << this->getTeams()[i].getName() << "       " << this->getTeams()[i].hpleftOnHpmax() << " hp" << endl;
+        cout << i + 1 << ". " << teams[i].getName() << "       " << teams[i].hpleftOnHpmax() << " hp" << endl;
     }
     return;
 }
@@ -63,12 +61,34 @@ void Trainer::setMoney(int money) {
     Trainer::money = money;
 }
 
-const vector<Item> &Trainer::getInventory() const {
-    return inventory;
+const vector<HealItem> &Trainer::getHealInventory() const {
+    return healInventory;
 }
 
-void Trainer::setInventory(const vector<Item> &inventory) {
-    Trainer::inventory = inventory;
+void Trainer::setHealInventory(const vector<HealItem> &healInventory) {
+    Trainer::healInventory = healInventory;
+}
+
+const vector<BallItem> &Trainer::getBallInventory() const {
+    return ballInventory;
+}
+
+void Trainer::setBallInventory(const vector<BallItem> &ballInventory) {
+    Trainer::ballInventory = ballInventory;
+}
+
+void Trainer::listHealInventory(){
+    for (int i = 0; i < healInventory.size(); ++i) {
+        cout << i + 1 << ". " << healInventory[i].getName() << endl;
+    }
+    return;
+}
+
+void Trainer::listBallInventory(){
+    for (int i = 0; i < ballInventory.size(); ++i) {
+        cout << i + 1 << ". " << ballInventory[i].getName() << endl;
+    }
+    return;
 }
 
 void Trainer::searchWildPokemon() {
@@ -135,7 +155,7 @@ Trainer::chooseAction(Pokemon *pokemonChoosed, Pokemon *wildPokemon, bool *endBa
             chooseAttack(pokemonChoosed, wildPokemon, pokemonMoves);
             break;
         case 2:
-            useItem();
+            useItem(pokemonChoosed, wildPokemon, endBattle);
             break;
         case 3:
             changePokemon(pokemonChoosed);
@@ -154,7 +174,7 @@ Trainer::chooseAction(Pokemon *pokemonChoosed, Pokemon *wildPokemon, bool *endBa
 void Trainer::battle(Pokemon *wildPokemon){
     cout << "Un " << wildPokemon->getName() << " sauvage est apparu !" << endl;
     cout << "Il poss\212de " << wildPokemon->hpleftOnHpmax() << " hp" << endl;
-    Pokemon pokemonChoosed = this->getTeams()[0];
+    Pokemon pokemonChoosed = teams[0];
     vector<Move> moves = pokemonChoosed.getMoves();
     bool endBattle = false;
     while (!endBattle){
@@ -198,8 +218,56 @@ void Trainer::runAway(bool *endBattle) {
     return;
 }
 
-void Trainer::useItem(){
+void Trainer::useItem(Pokemon *pokemonChoosed, Pokemon *wildPokemon, bool *endBattle){
+    unsigned short inventoryChoosed;
+    unsigned short pokeballChoosed;
+    unsigned short potionChoosed;
+    cout << "Quel type d'item souhaitez-vous utiliser ?" << endl;
+    cout << "1. Pokeball" << endl;
+    cout << "2. Potion" << endl;
+    cin >> inventoryChoosed;
+    cin.clear();
+    cin.ignore(1000, '\n');
+    switch (inventoryChoosed) {
+        case 1:
+            cout << "Quel pokeball souhaitez-vous utiliser ?" << endl;
+            listBallInventory();
+            cin >> pokeballChoosed;
+            cin.clear();
+            cin.ignore(1000, '\n');
+            if(this->ballInventory.size() == 0){
+                cout << "Vous n'avez pas de pokeball, vous passez votre tour.";
+                return;
+            } else if(pokeballChoosed > this->ballInventory.size() || pokeballChoosed < 0){
+                cout << "Tu dois me donner un chiffre parmis ceux propos\202s" << endl;
+                return useItem(pokemonChoosed, wildPokemon, endBattle);
+            } else {
+                this->ballInventory[pokeballChoosed - 1].catching(wildPokemon, endBattle);
+                this->ballInventory.erase(this->ballInventory.begin() + (pokeballChoosed - 1));
+            }
+            break;
+        case 2:
+            cout << "Quel potion souhaitez-vous utiliser ?" << endl;
+            listHealInventory();
+            cin >> potionChoosed;
+            cin.clear();
+            cin.ignore(1000, '\n');
+            if(this->healInventory.size() == 0){
+                cout << "Vous n'avez pas de potion, vous passez votre tour.";
+                return;
+            } else if(potionChoosed > this->healInventory.size() || potionChoosed < 0){
+                cout << "Tu dois me donner un chiffre parmis ceux propos\202s" << endl;
+                return useItem(pokemonChoosed, wildPokemon, endBattle);
+            } else {
+                this->healInventory[potionChoosed - 1].heal(pokemonChoosed, &this->healInventory, &potionChoosed);
+            }
+            break;
+        default:
+            cout << "Tu dois me donner un chiffre parmis ceux propos\202s" << endl;
+            return useItem(pokemonChoosed, wildPokemon, endBattle);
 
+    }
+    return;
 }
 
 void Trainer::changePokemon(Pokemon *pokemonChoosed) {
@@ -215,6 +283,8 @@ void Trainer::changePokemon(Pokemon *pokemonChoosed) {
     cin.ignore(1000, '\n');
     switch (pokemonSwitched) {
         case 1:
+            cout << &teams[pokemonSwitched - 1] << endl;
+            cout << pokemonChoosed << endl;
             if(this->getTeams()[pokemonSwitched - 1].getName() == pokemonChoosed->getName()){
                 cout << "Ce pokemon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
                 return changePokemon(pokemonChoosed);

@@ -11,7 +11,9 @@
 
 class PotionMax : public HealItem{
 public:
-    PotionMax(int id, const std::string &name, int price, int hpHeal);
+
+    PotionMax(int id, const std::string &name, int price, const std::string &type, int hpHeal);
+
     void heal(Pokemon pokemon);
 };
 

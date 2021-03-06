@@ -276,14 +276,14 @@ int log_items(){
 
 int d = log_items();
 
-Pokeball Pokeball = {1, "Pokeball", 200, 40};
-Superball SuperBall = {2, "SuperBall", 600, 60};
-Hyperball HyperBall = {3, "HyperBall", 1200, 80};
+Pokeball PokeBall = {1, "Pokeball", 200, 40, "ball"};
+Superball SuperBall = {2, "SuperBall", 600, 60, "ball"};
+Hyperball HyperBall = {3, "HyperBall", 1200, 80, "ball"};
 
-Potion PotionItem = {1, "Potion", 300, 20};
-SuperPotion SuperPotionItem = {2, "SuperPotion", 700, 50};
-HyperPotion HyperPotionItem = {3, "HyperPotion", 1200, 120};
-PotionMax PotionMaxItem = {4, "PotionMax", 2500, 999};
+HealItem PotionItem = {1, "Potion", 300, "potion", 20};
+HealItem SuperPotionItem = {2, "Super Potion", 700, "potion", 50};
+HealItem HyperPotionItem = {3, "Hyper Potion", 1200, "potion", 120};
+HealItem PotionMaxItem = {4, "Potion Max", 2500, "potion", 999};
 
 int log_locations(){
     cout << "Tous les items sont cr\202\202s !" << endl;

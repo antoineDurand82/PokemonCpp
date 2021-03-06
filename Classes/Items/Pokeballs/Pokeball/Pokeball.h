@@ -12,7 +12,8 @@
 class Pokeball : public BallItem {
 
 public:
-    Pokeball(int id, const std::string &name, int price, int catchRate);
+
+    Pokeball(int id, const std::string &name, int price, int catchRate, const std::string &type);
 };
 
 
