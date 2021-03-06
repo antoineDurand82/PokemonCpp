@@ -17,7 +17,6 @@ public:
     void withdrawPokemon(Trainer *trainer);
     void depositPokemon(Trainer *trainer);
 
-};
 
 
 #endif //POKEMONCPP_POKEMONCENTER_H

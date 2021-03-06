@@ -86,4 +86,3 @@ void PokemonCenter::depositPokemon(Trainer *trainer){
         trainer->teams.erase(trainer->teams.begin() + (actionChoosed - 1));
     }
 }
-
