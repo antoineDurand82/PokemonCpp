@@ -17,6 +17,7 @@
 #include "../../Classes/Items/Potions/PotionMax/PotionMax.h"
 #include "../../Classes/Items/Pokeballs/SuperBall/Superball.h"
 #include "../../Classes/Items/Pokeballs/Hyperball/Hyperball.h"
+#include "../../Classes/Building/PokemonCenter/PokemonCenter.h"
 
 // Extern des pokemon type
 // -----------------------------
@@ -156,7 +157,6 @@ extern Move LameDAir;
 // Extern des pokemons
 // -----------------------------
 
-extern Pokemon Darkrai;
 extern Pokemon Registeel;
 extern Pokemon Pachyradjah;
 extern Pokemon Hariyama;
@@ -177,6 +177,22 @@ extern Pokemon Scarabrute;
 extern Pokemon Melokrik;
 extern Pokemon Ronflex;
 extern Pokemon Kangourex;
+extern Pokemon Majaspic;
+extern Pokemon Jungko;
+extern Pokemon Grotadmorv;
+extern Pokemon Miasmax;
+extern Pokemon Mewtwo;
+extern Pokemon Alakazam;
+extern Pokemon Charkos;
+extern Pokemon Gigalithe;
+extern Pokemon Groudon;
+extern Pokemon Triopikeur;
+extern Pokemon Branette;
+extern Pokemon Noctunoir;
+extern Pokemon Darkrai;
+extern Pokemon Absol;
+extern Pokemon Roucarnage;
+extern Pokemon Boreas;
 
 // Extern des locations
 // -----------------------------
@@ -198,4 +214,6 @@ extern Potion PotionItem;
 extern SuperPotion SuperPotionItem;
 extern HyperPotion HyperPotionItem;
 extern PotionMax PotionMaxItem;
+
+extern PokemonCenter pokemonCenter;
 #endif //POKEMONCPP_INIT_H

@@ -7,12 +7,16 @@
 
 
 #include "../Building.h"
+#include "../../Trainer/Trainer.h"
 
 class PokemonCenter : public Building {
 public:
     PokemonCenter(int id, const std::string &name);
-    void healPokemons(Trainer trainer);
-    void goToPC(Trainer trainer);
+    void goToPC(Trainer *trainer);
+    void healPokemons(Trainer *trainer);
+    void withdrawPokemon(Trainer *trainer);
+    void depositPokemon(Trainer *trainer);
+
 };
 
 

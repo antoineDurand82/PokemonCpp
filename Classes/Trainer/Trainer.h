@@ -16,8 +16,6 @@ class Trainer {
 private:
     int id;
     std::string  name;
-    std::vector<Pokemon> teams;
-    std::vector<Pokemon> pc;
     int money;
     std::vector<Item> inventory;
 
@@ -53,8 +51,8 @@ public:
     void setInventory(const std::vector<Item> &inventory);
 
     Pokemon searchWildPokemon();
-
-
+    std::vector<Pokemon> teams;
+    std::vector<Pokemon> pc;
 
 };
 

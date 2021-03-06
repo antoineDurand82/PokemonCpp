@@ -10,6 +10,7 @@
 #include "../../Classes/Items/Potions/HyperPotion/HyperPotion.h"
 #include "../../Classes/Items/Potions/SuperPotion/SuperPotion.h"
 #include "../../Classes/Items/Potions/PotionMax/PotionMax.h"
+#include "../../Classes/Building/PokemonCenter/PokemonCenter.h"
 
 using namespace std;
 
@@ -73,7 +74,7 @@ Move DracoMeteor = {"Draco-Météore", DRAGON, 130, 90, 5, 5};
 Move PistoletAO = {"Pistolet à O", EAU, 40, 100, 25, 25};
 Move Surf = {"Surf", EAU, 90, 100, 15, 15};
 Move Cascade = {"Cascade", EAU, 80, 100, 15, 15};
-Move Hydrocanon = {"Hydrocanon", EAU, 110, 80, 5, 55};
+Move Hydrocanon = {"Hydrocanon", EAU, 110, 80, 5, 5};
 
 // Attaque Electrik
 Move Eclair = {"Éclair", ELECTRIK, 40, 100, 30, 30};
@@ -312,3 +313,5 @@ int log_end(){
 }
 
 int f = log_end();
+
+PokemonCenter pokemonCenter = {1, "Centre"};
