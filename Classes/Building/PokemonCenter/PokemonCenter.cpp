@@ -8,6 +8,7 @@
 using namespace std;
 
 PokemonCenter::PokemonCenter(int id, const std::string &name) : Building(id, name) {}
+
 void PokemonCenter::healPokemons(Trainer *trainer) {
     for(unsigned i=0; i < trainer->teams.size(); ++i){
         std::cout << trainer->teams[i].getName() << std::endl;

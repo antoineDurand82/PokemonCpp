@@ -12,11 +12,15 @@
 class PokemonCenter : public Building {
 public:
     PokemonCenter(int id, const std::string &name);
-    void goToPC(Trainer *trainer);
-    void healPokemons(Trainer *trainer);
-    void withdrawPokemon(Trainer *trainer);
-    void depositPokemon(Trainer *trainer);
 
+    void goToPC(Trainer *trainer);
+
+    void healPokemons(Trainer *trainer);
+
+    void withdrawPokemon(Trainer *trainer);
+
+    void depositPokemon(Trainer *trainer);
+};
 
 
 #endif //POKEMONCPP_POKEMONCENTER_H
