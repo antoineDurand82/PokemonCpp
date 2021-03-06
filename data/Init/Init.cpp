@@ -3,14 +3,6 @@
 //
 
 #include "Init.h"
-#include "../../Classes/Items/Pokeballs/Pokeball/Pokeball.h"
-#include "../../Classes/Items/Pokeballs/Superball/Superball.h"
-#include "../../Classes/Items/Pokeballs/Hyperball/Hyperball.h"
-#include "../../Classes/Items/Potions/Potion/Potion.h"
-#include "../../Classes/Items/Potions/HyperPotion/HyperPotion.h"
-#include "../../Classes/Items/Potions/SuperPotion/SuperPotion.h"
-#include "../../Classes/Items/Potions/PotionMax/PotionMax.h"
-#include "../../Classes/Building/PokemonCenter/PokemonCenter.h"
 
 using namespace std;
 
