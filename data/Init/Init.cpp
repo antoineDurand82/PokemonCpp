@@ -10,6 +10,7 @@
 #include "../../Classes/Items/Potions/HyperPotion/HyperPotion.h"
 #include "../../Classes/Items/Potions/SuperPotion/SuperPotion.h"
 #include "../../Classes/Items/Potions/PotionMax/PotionMax.h"
+#include "../../Classes/Building/PokemonCenter/PokemonCenter.h"
 
 using namespace std;
 
@@ -41,7 +42,7 @@ PokemonType TENEBRES = {"TENEBRES", {"TENEBRES", "FEE", "COMBAT"}, {"SPECTRE", "
 PokemonType VOL = {"VOL", {"ELECTRIK", "ROCHE", "ACIER"}, {"INSECTE", "COMBAT", "PLANTE"}, {}, {"ELECTRIK", "GLACE", "ROCHE"}, {"INSECTE", "COMBAT", "PLANTE"}, {"SOL"}};
 
 int log_moves(){
-    cout << "Initialisation des types réussi !" << endl;
+    cout << "Initialisation des types r\202ussi !" << endl;
     cout << "----------------------------------------------" << endl;
     cout << "\n" << endl;
     cout << "----------------------------------------------" << endl;
@@ -52,7 +53,7 @@ int log_moves(){
 int b = log_moves();
 
 // Attaque Acier
-Move TeteDeFer = {"Tête de fer", ACIER, 80, 100, 15, 15};
+Move TeteDeFer = {"T\210te de fer", ACIER, 80, 100, 15, 15};
 Move QueueDeFer = {"Queue de fer", ACIER, 100, 75, 15, 15};
 Move Luminocanon = {"Luminocanon", ACIER, 80, 100, 10, 10};
 Move GriffeAcier = {"Griffe Acier", ACIER, 50, 95, 35, 35};
@@ -60,20 +61,20 @@ Move GriffeAcier = {"Griffe Acier", ACIER, 50, 95, 35, 35};
 // Attaque Combat
 Move Balayette = {"Balayette", COMBAT, 65, 100, 20, 20};
 Move CasseBrique = {"Casse-Brique", COMBAT, 75, 100, 15, 15};
-Move Aurasphere = {"Aurasphère", COMBAT, 80, 100, 20, 20};
+Move Aurasphere = {"Aurasph\212re", COMBAT, 80, 100, 20, 20};
 Move Exploforce = {"Exploforce", COMBAT, 120, 70, 5, 5};
 
 // Attaque Dragon
-Move Colere = {"Colère", DRAGON, 120, 100, 10, 10};
+Move Colere = {"Col\212re", DRAGON, 120, 100, 10, 10};
 Move DracoGriffe = {"Draco-Griffe", DRAGON, 80, 100, 15, 15};
 Move HurleTemps = {"Hurle-Temps", DRAGON, 150, 90, 5, 5};
-Move DracoMeteor = {"Draco-Météore", DRAGON, 130, 90, 5, 5};
+Move DracoMeteor = {"Draco-M\202t\202ore", DRAGON, 130, 90, 5, 5};
 
 // Attaque Eau
-Move PistoletAO = {"Pistolet à O", EAU, 40, 100, 25, 25};
+Move PistoletAO = {"Pistolet \205 O", EAU, 40, 100, 25, 25};
 Move Surf = {"Surf", EAU, 90, 100, 15, 15};
 Move Cascade = {"Cascade", EAU, 80, 100, 15, 15};
-Move Hydrocanon = {"Hydrocanon", EAU, 110, 80, 5, 55};
+Move Hydrocanon = {"Hydrocanon", EAU, 110, 80, 5, 5};
 
 // Attaque Electrik
 Move Eclair = {"Éclair", ELECTRIK, 40, 100, 30, 30};
@@ -88,13 +89,13 @@ Move EclatMagique = {"Éclat Magique", FEE, 80, 100, 10, 10};
 Move PouvoirLunaire = {"Pouvoir Lunaire", FEE, 95, 100, 15, 15};
 
 // Attaque Feu
-Move Flammeche = {"Flammèche", FEU, 40, 100, 25, 25};
+Move Flammeche = {"Flamm\212che", FEU, 40, 100, 25, 25};
 Move LanceFlamme = {"LanceFlamme", FEU, 90, 100, 15, 15};
 Move RoueDeFeu = {"Roue de Feu", FEU, 60, 100, 25, 25};
-Move Deflagration = {"Flammèche", FEU, 110, 85, 5, 5};
+Move Deflagration = {"Flamm\212che", FEU, 110, 85, 5, 5};
 
 // Attaque Glace
-Move VentGlace = {"Vent Glacé", GLACE, 55, 95, 15, 15};
+Move VentGlace = {"Vent Glac\202", GLACE, 55, 95, 15, 15};
 Move LaserGlace = {"Laser Glace", GLACE, 90, 100, 10, 10};
 Move Blizzard = {"Blizzard", GLACE, 110, 70, 5, 5};
 Move Avalanche = {"Avalanche", GLACE, 60, 100, 10, 10};
@@ -117,13 +118,13 @@ Move VitesseExtreme = {"Vitesse-Extreme", NORMAL, 80, 100, 5, 5};
 Move TranchHerbe = {"Tranch'Herbe", PLANTE, 55, 95, 25, 25};
 Move FouetLianes = {"Fouet-Lianes", PLANTE, 45, 100, 25, 25};
 Move LameFeuille = {"Lame Feuille", PLANTE, 90, 100, 15, 15};
-Move TempeteVerte = {"Tempête Verte", PLANTE, 130, 90, 5, 5};
+Move TempeteVerte = {"Temp\210te Verte", PLANTE, 130, 90, 5, 5};
 
 // Attaque Poison
 Move DardVenin = {"Dard-Venin", POISON, 15, 100, 35, 35};
 Move BombeBeurk = {"Bombe Beurk", POISON, 90, 100, 10, 10};
 Move DirectToxik = {"Direct Toxik", POISON, 80, 100, 20, 20};
-Move Detritus = {"Détritus", POISON, 65, 100, 20, 20};
+Move Detritus = {"D\202tritus", POISON, 65, 100, 20, 20};
 
 // Attaque Psy
 Move ChocMental = {"Choc Mental", PSY, 50, 100, 25, 25};
@@ -138,18 +139,18 @@ Move PouvoirAntique = {"Pouvoir Antique", ROCHE, 60, 100, 5, 5};
 Move LameDeRoc = {"Lame de Roc", ROCHE, 100, 80, 5, 5};
 
 // Attaque Sol
-Move Pietisol = {"Piétisol", SOL, 60, 100, 20, 20};
-Move Seisme = {"Séisme", SOL, 100, 100, 10, 10};
+Move Pietisol = {"Pi\202tisol", SOL, 60, 100, 20, 20};
+Move Seisme = {"S\202isme", SOL, 100, 100, 10, 10};
 Move TirDeBoue = {"Tir de Boue", SOL, 55, 95, 15, 15};
 Move Telluriforce = {"Telluriforce", SOL, 90, 100, 10, 10};
 
 // Attaque Spectre
 Move Etonnement = {"Étonnement", SPECTRE, 30, 100, 15, 15};
-Move Lechouille = {"Léchouille", SPECTRE, 30, 100, 30, 30};
+Move Lechouille = {"L\202chouille", SPECTRE, 30, 100, 30, 30};
 Move BallOmbre = {"Ball'Ombre", SPECTRE, 80, 100, 15, 15};
 Move VentMauvais = {"Vent Mauvais", SPECTRE, 60, 100, 5, 5};
 
-// Attaque Ténèbres
+// Attaque T\202n\212bres
 Move Assurance = {"Assurance", TENEBRES, 60, 100, 10, 10};
 Move Morsure = {"Morsure", TENEBRES, 60, 100, 25, 25};
 Move Machouille = {"Mâchouille", TENEBRES, 80, 100, 15, 15};
@@ -157,17 +158,17 @@ Move Vibrobscur = {"Vibrobscur", TENEBRES, 80, 100, 15, 15};
 
 // Move Vol
 Move Picpic = {"Picpic", VOL, 35, 100, 35, 35};
-Move Aeropique = {"Aéropique", VOL, 60, 100, 20, 20};
+Move Aeropique = {"A\202ropique", VOL, 60, 100, 20, 20};
 Move Rapace = {"Rapace", VOL, 120, 100, 15, 15};
 Move LameDAir = {"Lame d'Air", VOL, 75, 95, 15, 15};
 
 
 int log_pokemons(){
-    cout << "Initialisation des attaques réussi !" << endl;
+    cout << "Initialisation des attaques r\202ussi !" << endl;
     cout << "----------------------------------------------" << endl;
     cout << "\n" << endl;
     cout << "----------------------------------------------" << endl;
-    cout << "Création des pokémons en cours :" << endl;
+    cout << "Cr\202ation des pok\202mons en cours :" << endl;
     return 1;
 }
 
@@ -184,12 +185,12 @@ Pokemon Pachyradjah = {3, "Pachyradjah", ACIER, 250, 250, {Charge, TeteDeFer, Qu
 Pokemon Hariyama = {4, "Hariyama", COMBAT, 250, 250, {GigaImpact, CasseBrique, Balayette}, false};
 Pokemon Colossinge = {5, "Colossinge", COMBAT, 250, 250,  {Exploforce, Ultimawashi, Charge, Aurasphere}, false};
 
-// Pokémon Dragon
+// Pok\202mon Dragon
 
 Pokemon Tranchodon = {6, "Trachodon", DRAGON, 250, 250, {Coupe, DracoGriffe, Colere, Charge}, false};
 Pokemon Muplodocus = {7, "Muplodocus", DRAGON, 250, 250, {PistoletAO, HurleTemps, DracoMeteor, Hydrocanon}, false};
 
-// Pokémon Eau
+// Pok\202mon Eau
 
 Pokemon Tortank = {8, "Tortank", EAU, 250, 250, {Charge, Surf, Cascade, Hydrocanon}, false};
 Pokemon Wailord = {9, "Wailord", EAU, 300, 300, {Charge, PistoletAO, Surf, Cascade}, false};
@@ -201,7 +202,7 @@ Pokemon Luxrai = {11, "Luxrai", ELECTRIK, 200, 200, {Charge, Etincelle, FatalFou
 
 // Pokemon Fee
 
-Pokemon Melodelfe = {12, "Mélodelfe", FEE, 250, 250, {VoixEnjoleuse, EclatMagique, Charge, Calinerie}, false};
+Pokemon Melodelfe = {12, "M\202lodelfe", FEE, 250, 250, {VoixEnjoleuse, EclatMagique, Charge, Calinerie}, false};
 Pokemon Nymphali = {13, "Nymphali", FEE, 150, 150, {Calinerie, VoixEnjoleuse, EclatMagique, PouvoirLunaire}, false};
 
 // Pokemon Feu
@@ -217,7 +218,7 @@ Pokemon Polagriffe = {17, "Polagriffe", GLACE, 200, 200, {Charge, Coupe, Blizzar
 // Pokemon Insecte
 
 Pokemon Scarabrute = {18, "Scarabrute", INSECTE, 200, 200, {Taillade, Piqure, PlaieCroix, Coupe}, false};
-Pokemon Melokrik = {19, "Mélokrik", INSECTE, 100, 100, {Taillade, Bourdon, Piqure, Coupe}, false};
+Pokemon Melokrik = {19, "M\202lokrik", INSECTE, 100, 100, {Taillade, Bourdon, Piqure, Coupe}, false};
 
 // Pokemon Normal
 
@@ -261,15 +262,15 @@ Pokemon Absol = {34, "Absol", TENEBRES, 200, 200, {Morsure, Machouille, Vibrobsc
 
 // Pokemon Vol
 
-Pokemon Boreas = {35, "Boréas", VOL, 300, 300, {Aeropique, LameDAir, FatalFoudre, Charge}, false};
+Pokemon Boreas = {35, "Bor\202as", VOL, 300, 300, {Aeropique, LameDAir, FatalFoudre, Charge}, false};
 Pokemon Roucarnage = {36, "Roucarnage", VOL, 200, 200, {Picpic, Aeropique, Rapace, LameDAir}, false};
 
 int log_items(){
-    cout << "Tous les pokemons sont nés !" << endl;
+    cout << "Tous les pokemons sont n\202s !" << endl;
     cout << "----------------------------------------------" << endl;
     cout << "\n" << endl;
     cout << "----------------------------------------------" << endl;
-    cout << "Création Items :" << endl;
+    cout << "Cr\202ation Items :" << endl;
     return 1;
 }
 
@@ -285,11 +286,11 @@ HyperPotion HyperPotionItem = {3, "HyperPotion", 1200, 120};
 PotionMax PotionMaxItem = {4, "PotionMax", 2500, 999};
 
 int log_locations(){
-    cout << "Tous les items sont créés !" << endl;
+    cout << "Tous les items sont cr\202\202s !" << endl;
     cout << "----------------------------------------------" << endl;
     cout << "\n" << endl;
     cout << "----------------------------------------------" << endl;
-    cout << "Exploration de la région Hoenn :" << endl;
+    cout << "Exploration de la r\202gion Hoenn :" << endl;
     return 1;
 }
 
@@ -302,13 +303,15 @@ Location Ocean = Location("Ocean", {Tortank, Wailord});
 Location Ciel = Location("Ciel", {Boreas, Roucarnage});
 
 int log_end(){
-    cout << "Vous avez découvert le monde Hoenn !" << endl;
+    cout << "Vous avez d\202couvert le monde Hoenn !" << endl;
     cout << "----------------------------------------------" << endl;
     cout << "\n" << endl;
     cout << "----------------------------------------------" << endl;
-    cout << "Initialisation terminée, amusez vous bien !" << endl;
+    cout << "Initialisation termin\202e, amusez vous bien !" << endl;
     cout << "\n" << endl;
     return 1;
 }
 
 int f = log_end();
+
+PokemonCenter pokemonCenter = {1, "Centre"};

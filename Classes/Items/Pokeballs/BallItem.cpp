@@ -10,7 +10,7 @@ BallItem::BallItem(int id, const std::string &name, int price, int catchRate) : 
                                                                                 catchRate(catchRate) {}
 bool BallItem::tryCatch(Pokemon pokemon) {
     if(pokemon.getIsCaptured()){
-        std::cout << "Ce pokémon ne peut être capturé, il appartient déjà un dresseur." << std::endl;
+        std::cout << "Ce pok\202mon ne peut \210tre captur\202, il appartient d\202j\205 un dresseur." << std::endl;
         return false;
     }
     if(catchRate == 100){
@@ -25,12 +25,12 @@ bool BallItem::tryCatch(Pokemon pokemon) {
 }
 
 void BallItem::use(Pokemon pokemon) {
-    std::cout << name << " est lancé sur " << pokemon.getName() << "..." << std::endl;
+    std::cout << name << " est lanc\202 sur " << pokemon.getName() << "..." << std::endl;
     bool canCatch = tryCatch(pokemon);
 
     if(!canCatch){
-        std::cout << "La capture a échoué." << std::endl;
+        std::cout << "La capture a \202chou\202." << std::endl;
     }else{
-        std::cout << pokemon.getName() << " a été capturé !" << std::endl;
+        std::cout << pokemon.getName() << " a \202t\202 captur\202 !" << std::endl;
     }
 }

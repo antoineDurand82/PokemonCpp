@@ -66,20 +66,20 @@ void Trainer::setInventory(const std::vector<Item> &inventory) {
 
 Pokemon Trainer::searchWildPokemon() {
     unsigned short biomeChoiced;
-    // searchWildPokemon: demande le lieu puis sort un pokemon aléatoire d'une liste suivant le lieu (plaine, grotte, océan, ciel)
-    cout << "Vous avez le choix entre 5 biomes différents: " << endl;
+    // searchWildPokemon: demande le lieu puis sort un pokemon al\202atoire d'une liste suivant le lieu (plaine, grotte, oc\202an, ciel)
+    cout << "Vous avez le choix entre 5 biomes diff\202rents: " << endl;
     cout << "----------------------------------------------" << endl;
     cout << "1. La plaine" << endl;
     cout << "2. La montagne" << endl;
     cout << "3. La grotte" << endl;
-    cout << "4. L'océan" << endl;
+    cout << "4. L'oc\202an" << endl;
     cout << "5. Le ciel" << endl;
     cout << "----------------------------------------------" << endl;
-    cout << "Pour sélectionner l'un de ces biomes vous avez juste à entrer le chiffre correspondant :" << endl;
+    cout << "Pour s\202lectionner l'un de ces biomes vous avez juste \205 entrer le chiffre correspondant :" << endl;
     cin >> biomeChoiced;
     cin.clear();
     cin.ignore(1000, '\n');
-    Location choice; // création location vide
+    Location choice; // cr\202ation location vide
     switch (biomeChoiced) {
         case 1:
             choice = Plaine;
@@ -97,7 +97,7 @@ Pokemon Trainer::searchWildPokemon() {
             choice = Ciel;
             break;
         default:
-            cout << "Tu dois me donner un chiffre parmis ceux proposés";
+            cout << "Tu dois me donner un chiffre parmis ceux propos\202s";
             return searchWildPokemon();
     }
     vector<Pokemon> listPokemon = choice.getListPokemon();
