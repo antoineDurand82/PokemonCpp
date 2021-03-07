@@ -244,6 +244,11 @@ void Trainer::useItem(Pokemon *pokemonChoosed, Pokemon *wildPokemon, bool *endBa
             } else {
                 this->ballInventory[pokeballChoosed - 1].catching(wildPokemon, endBattle);
                 this->ballInventory.erase(this->ballInventory.begin() + (pokeballChoosed - 1));
+                if(this->teams.size() < 6){
+                    this->teams.push_back(*wildPokemon);
+                } else {
+                    this->pc.push_back(*wildPokemon);
+                }
             }
             break;
         case 2:

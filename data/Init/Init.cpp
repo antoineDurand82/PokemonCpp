@@ -3,6 +3,7 @@
 //
 
 #include "Init.h"
+#include "../../Classes/Game/Game.h"
 
 using namespace std;
 
@@ -301,9 +302,19 @@ int log_end(){
     cout << "----------------------------------------------" << endl;
     cout << "Initialisation termin\202e, amusez vous bien !" << endl;
     cout << "\n" << endl;
+    cout << "\n" << endl;
+    cout << "\n" << endl;
     return 1;
 }
 
 int f = log_end();
 
+Trainer Sacha = {1,  "sacha", {Darkrai, Tortank, Tortank, Tortank, Tortank},
+                 {Registeel, Arcanin}, 5000, {HyperPotionItem, PotionMaxItem},
+                 {PokeBall, HyperBall}};
+
 PokemonCenter pokemonCenter = {1, "Centre"};
+
+
+
+Game pokemonCPP = Game(Sacha, pokemonCenter);

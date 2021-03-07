@@ -81,6 +81,8 @@ public:
     void listBallInventory();
 
     void listHealInventory();
+
+    void goToPokemonCenter();
 };
 
 

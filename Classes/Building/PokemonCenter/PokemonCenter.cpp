@@ -79,7 +79,7 @@ void PokemonCenter::depositPokemon(Trainer *trainer){
         for (unsigned int i = 0; i < trainer->teams.size(); ++i) {
             cout << i + 1 << ". " << trainer->teams[i].getName() << endl;
         }
-        cout << "Pour d\202poser le pok\202mon le pok\202mon correspondant, entrez le chiffre correspondant :" << endl;
+        cout << "Pour d\202poser le pok\202mon correspondant, entrez le chiffre correspondant :" << endl;
         cin >> actionChoosed;
         cin.clear();
         cin.ignore(1000, '\n');
