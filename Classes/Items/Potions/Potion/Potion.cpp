@@ -4,4 +4,6 @@
 
 #include "Potion.h"
 
-Potion::Potion(int id, const std::string &name, int price, int hpHeal) : HealItem(id, name, price, hpHeal) {}
+Potion::Potion(int id, const std::string &name, int price, const std::string &type, int hpHeal) : HealItem(id, name,
+                                                                                                           price, type,
+                                                                                                           hpHeal) {}

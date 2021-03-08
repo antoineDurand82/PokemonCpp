@@ -9,11 +9,18 @@
 
 class BallItem : public Item {
 private:
+
     int catchRate;
 public:
-    BallItem(int id, const std::string &name, int price, int catchRate);
-    bool tryCatch(Pokemon pokemon);
-    void use(Pokemon pokemon);
+    BallItem(int id, const std::string &name, int price, int catchRate, const std::string &type);
+
+    BallItem();
+
+    bool tryCatch(Pokemon *pokemon);
+
+    void catching(Pokemon *pokemon, bool *endBattle);
+
+    BallItem(Item item);
 };
 
 

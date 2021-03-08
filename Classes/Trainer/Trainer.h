@@ -5,6 +5,8 @@
 #include <iostream>
 #include "../Pokemon/Pokemon.h"
 #include "../Items/Item/Item.h"
+#include "../Items/Pokeballs/BallItem.h"
+#include "../Items/Potions/HealItem.h"
 #include <vector>
 
 #ifndef POKEMONCPP_TRAINER_H
@@ -17,14 +19,16 @@ private:
     int id;
     std::string  name;
     int money;
-    std::vector<Item> inventory;
+
 
 public:
-
     Trainer(int id, const std::string &name, const std::vector<Pokemon> &teams, const std::vector<Pokemon> &pc,
-            int money, const std::vector<Item> &inventory);
+            int money, const std::vector<HealItem> &healInventory, const std::vector<BallItem> &ballInventory);
 
-    Trainer();
+    std::vector<Pokemon> teams;
+    std::vector<Pokemon> pc;
+    std::vector<HealItem> healInventory;
+    std::vector<BallItem> ballInventory;
 
     int getId() const;
 
@@ -50,10 +54,35 @@ public:
 
     void setInventory(const std::vector<Item> &inventory);
 
-    Pokemon searchWildPokemon();
-    std::vector<Pokemon> teams;
-    std::vector<Pokemon> pc;
+    void searchWildPokemon();
 
+    void runAway(bool *pBoolean);
+
+    void chooseAction(Pokemon *pokemonChoosed, Pokemon *wildPokemon, bool *pBoolean, const std::vector<Move> *pokemonMoves);
+
+    void changePokemon(Pokemon *pPokemon);
+
+    void chooseAttack(Pokemon *pokemonChoosed, Pokemon *wildPokemon, const std::vector<Move> *pokemonMoves);
+
+    void battle(Pokemon *wildPokemon);
+
+    void getTeamsToString();
+
+    void useItem(Pokemon *pokemonChoosed, Pokemon *wildPokemon, bool *endBattle);
+
+    const std::vector<HealItem> &getHealInventory() const;
+
+    void setHealInventory(const std::vector<HealItem> &healInventory);
+
+    const std::vector<BallItem> &getBallInventory() const;
+
+    void setBallInventory(const std::vector<BallItem> &ballInventory);
+
+    void listBallInventory();
+
+    void listHealInventory();
+
+    void goToPokemonCenter();
 };
 
 

@@ -11,7 +11,8 @@
 
 class SuperPotion : public HealItem{
 public:
-    SuperPotion(int id, const std::string &name, int price, int hpHeal);
+    SuperPotion(int id, const std::string &name, int price, const std::string &type, int hpHeal);
+
 };
 
 

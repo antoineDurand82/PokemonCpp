@@ -11,7 +11,8 @@
 
 class Hyperball : public BallItem {
 public:
-    Hyperball(int id, const std::string &name, int price, int catchRate);
+
+    Hyperball(int id, const std::string &name, int price, int catchRate, const std::string &type);
 };
 
 

@@ -4,17 +4,21 @@
 
 #include "BallItem.h"
 #include <iostream>
-#include "../../Pokemon/Pokemon.h"
+using namespace std;
 
-BallItem::BallItem(int id, const std::string &name, int price, int catchRate) : Item(id, name, price),
+BallItem::BallItem(int id, const string &name, int price, int catchRate, const string &type) : Item(id, name, price, type),
                                                                                 catchRate(catchRate) {}
-bool BallItem::tryCatch(Pokemon pokemon) {
-    if(pokemon.getIsCaptured()){
-        std::cout << "Ce pok\202mon ne peut \210tre captur\202, il appartient d\202j\205 un dresseur." << std::endl;
+
+BallItem::BallItem() {}
+
+
+bool BallItem::tryCatch(Pokemon *pokemon) {
+    if(pokemon->getIsCaptured()){
+        cout << "Ce pok\202mon ne peut \210tre captur\202, il appartient d\202j\205 un dresseur." << endl;
         return false;
     }
     if(catchRate == 100){
-        pokemon.setIsCaptured(true);
+        pokemon->setIsCaptured(true);
         return true;
     }
     int catchPercent = rand() % 100 + 1;
@@ -24,13 +28,21 @@ bool BallItem::tryCatch(Pokemon pokemon) {
     return false;
 }
 
-void BallItem::use(Pokemon pokemon) {
-    std::cout << name << " est lanc\202 sur " << pokemon.getName() << "..." << std::endl;
+void BallItem::catching(Pokemon *pokemon, bool *endBattle) {
+    cout << this->getName() << " est lanc\202 sur " << pokemon->getName() << "..." << endl;
     bool canCatch = tryCatch(pokemon);
 
     if(!canCatch){
-        std::cout << "La capture a \202chou\202." << std::endl;
+        cout << "La capture a \202chou\202." << endl;
     }else{
-        std::cout << pokemon.getName() << " a \202t\202 captur\202 !" << std::endl;
+        cout << pokemon->getName() << " a \202t\202 captur\202 !\n" << endl;
+       *endBattle = true;
     }
+    return;
 }
+
+BallItem::BallItem(Item item) {
+
+}
+
+

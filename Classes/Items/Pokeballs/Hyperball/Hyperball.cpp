@@ -5,5 +5,6 @@
 #include "Hyperball.h"
 
 
-Hyperball::Hyperball(int id, const std::string &name, int price, int catchRate) : BallItem(id, name, price,
-                                                                                           catchRate) {}
+Hyperball::Hyperball(int id, const std::string &name, int price, int catchRate, const std::string &type) : BallItem(id, name, price,
+                                                                                           catchRate, type) {}
+

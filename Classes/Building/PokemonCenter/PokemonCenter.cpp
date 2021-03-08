@@ -11,7 +11,6 @@ PokemonCenter::PokemonCenter(int id, const string &name) : Building(id, name) {}
 
 void PokemonCenter::healPokemons(Trainer *trainer) {
     for(unsigned i=0; i < trainer->teams.size(); ++i){
-        cout << trainer->teams[i].getName() << endl;
         trainer->teams[i].setCurrentHp(trainer->teams[i].getMaxHp());
         for(unsigned j=0; j < trainer->teams[i].moves.size(); ++j){
             trainer->teams[i].moves[j].setPowerPoints(trainer->teams[i].moves[j].getMaxPowerPoints());
@@ -79,7 +78,7 @@ void PokemonCenter::depositPokemon(Trainer *trainer){
         for (unsigned int i = 0; i < trainer->teams.size(); ++i) {
             cout << i + 1 << ". " << trainer->teams[i].getName() << endl;
         }
-        cout << "Pour d\202poser le pok\202mon le pok\202mon correspondant, entrez le chiffre correspondant :" << endl;
+        cout << "Pour d\202poser le pok\202mon correspondant, entrez le chiffre correspondant :" << endl;
         cin >> actionChoosed;
         cin.clear();
         cin.ignore(1000, '\n');

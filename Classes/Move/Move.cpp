@@ -4,17 +4,19 @@
 
 #include "Move.h"
 
-Move::Move(const std::string &name, const PokemonType &type, int power, int accuracy, int powerPoints,
+using namespace std;
+
+Move::Move(const string &name, const PokemonType &type, int power, int accuracy, int powerPoints,
            int maxPowerPoints) : name(name), type(type), power(power), accuracy(accuracy), powerPoints(powerPoints),
                                  maxPowerPoints(maxPowerPoints) {}
 
 Move::Move() {}
 
-const std::string &Move::getName() const {
+const string &Move::getName() const {
     return name;
 }
 
-void Move::setName(const std::string &name) {
+void Move::setName(const string &name) {
     Move::name = name;
 }
 

@@ -3,11 +3,12 @@
 //
 
 #include "PokemonType.h"
+using namespace std;
 
-PokemonType::PokemonType(const std::string &name, const std::vector<std::string> &weakAgainst,
-                         const std::vector<std::string> &strongAgainst,
-                         const std::vector<std::string> &notEffectiveAgainst, const std::vector<std::string> &weakTo,
-                         const std::vector<std::string> &resistTo, const std::vector<std::string> &immuneTo) : name(
+PokemonType::PokemonType(const string &name, const vector<string> &weakAgainst,
+                         const vector<string> &strongAgainst,
+                         const vector<string> &notEffectiveAgainst, const vector<string> &weakTo,
+                         const vector<string> &resistTo, const vector<string> &immuneTo) : name(
         name), weakAgainst(weakAgainst), strongAgainst(strongAgainst), notEffectiveAgainst(notEffectiveAgainst),
                                                                                                                weakTo(weakTo),
                                                                                                                resistTo(
@@ -17,30 +18,30 @@ PokemonType::PokemonType(const std::string &name, const std::vector<std::string>
 
 PokemonType::PokemonType() {}
 
-const std::string &PokemonType::getName() const {
+const string &PokemonType::getName() const {
     return name;
 }
 
-const std::vector<std::string> &PokemonType::getWeakAgainst() const {
+const vector<string> &PokemonType::getWeakAgainst() const {
     return weakAgainst;
 }
 
-const std::vector<std::string> &PokemonType::getStrongAgainst() const {
+const vector<string> &PokemonType::getStrongAgainst() const {
     return strongAgainst;
 }
 
-const std::vector<std::string> &PokemonType::getNotEffectiveAgainst() const {
+const vector<string> &PokemonType::getNotEffectiveAgainst() const {
     return notEffectiveAgainst;
 }
 
-const std::vector<std::string> &PokemonType::getWeakTo() const {
+const vector<string> &PokemonType::getWeakTo() const {
     return weakTo;
 }
 
-const std::vector<std::string> &PokemonType::getResistTo() const {
+const vector<string> &PokemonType::getResistTo() const {
     return resistTo;
 }
 
-const std::vector<std::string> &PokemonType::getImmuneTo() const {
+const vector<string> &PokemonType::getImmuneTo() const {
     return immuneTo;
 }

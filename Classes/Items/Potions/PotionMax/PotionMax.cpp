@@ -4,7 +4,12 @@
 
 #include "PotionMax.h"
 
-PotionMax::PotionMax(int id, const std::string &name, int price, int hpHeal) : HealItem(id, name, price, hpHeal) {}
-void PotionMax::heal(Pokemon pokemon) {
-    pokemon.setCurrentHp(pokemon.getMaxHp());
-}
+PotionMax::PotionMax(int id, const std::string &name, int price, const std::string &type, int hpHeal) : HealItem(id,
+                                                                                                                 name,
+                                                                                                                 price,
+                                                                                                                 type,
+                                                                                                                 hpHeal) {}
+
+
+
+

@@ -18,6 +18,7 @@
 #include "../../Classes/Items/Pokeballs/SuperBall/Superball.h"
 #include "../../Classes/Items/Pokeballs/Hyperball/Hyperball.h"
 #include "../../Classes/Building/PokemonCenter/PokemonCenter.h"
+#include "../../Classes/Game/Game.h"
 
 // Extern des pokemon type
 // -----------------------------
@@ -202,6 +203,8 @@ extern Location Ocean;
 extern Location Grotte;
 extern Location Montagne;
 extern Location Ciel;
+extern Location Foret;
+extern Location Marais;
 
 // Extern Items
 // -----------------------------
@@ -215,5 +218,18 @@ extern SuperPotion SuperPotionItem;
 extern HyperPotion HyperPotionItem;
 extern PotionMax PotionMaxItem;
 
+// Extern Trainer
+// -----------------------------
+
+extern Trainer Sascha;
+
+// Extern PokemonCenter
+// -----------------------------
+
 extern PokemonCenter pokemonCenter;
+
+// Extern Game
+// -----------------------------
+
+extern Game pokemonCPP;
 #endif //POKEMONCPP_INIT_H

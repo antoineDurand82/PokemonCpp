@@ -11,7 +11,7 @@
 
 class HyperPotion : public HealItem {
 public:
-    HyperPotion(int id, const std::string &name, int price, int hpHeal);
+    HyperPotion(int id, const std::string &name, int price, const std::string &type, int hpHeal);
 };
 
 

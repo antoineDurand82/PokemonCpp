@@ -11,7 +11,8 @@
 
 class Potion : public HealItem {
 public:
-    Potion(int id, const std::string &name, int price, int hpHeal);
+
+    Potion(int id, const std::string &name, int price, const std::string &type, int hpHeal);
 };
 
 
