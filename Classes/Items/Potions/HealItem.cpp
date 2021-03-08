@@ -14,7 +14,7 @@ int HealItem::getHpHeal() const {
     return hpHeal;
 }
 
-void HealItem::heal(Pokemon *pokemon, std::vector<HealItem> *potionList, unsigned short *index) {
+void HealItem::heal(Pokemon *pokemon, vector<HealItem> *potionList, unsigned short *index) {
     if(pokemon->checkAlived()){
         if(pokemon->getCurrentHp() == pokemon->getMaxHp()){
             cout << pokemon->getName() << " n'a pas besoin d'\210tre soign\202" << ". Vous passez votre tour." << endl;

@@ -104,8 +104,9 @@ void Pokemon::showMoves(){
 int Pokemon::randomAttack(){
     Move *attackUsed =  &this->moves[rand() % this->moves.size()];
     if(this->canUseTM(attackUsed)){
-        cout << this->getName() << " a utilis\202 " << attackUsed->getName() << endl;
-        return this->useTM(attackUsed);
+        int damageMade = this->useTM(attackUsed);
+        cout << this->getName() << " a utilis\202 " << attackUsed->getName() << " et a fait " << damageMade << " de d\202gat !" <<endl;
+        return damageMade;
     }
     return randomAttack();
 }

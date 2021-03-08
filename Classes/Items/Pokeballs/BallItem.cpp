@@ -4,10 +4,9 @@
 
 #include "BallItem.h"
 #include <iostream>
-#include "../../Pokemon/Pokemon.h"
 using namespace std;
 
-BallItem::BallItem(int id, const string &name, int price, int catchRate, const std::string &type) : Item(id, name, price, type),
+BallItem::BallItem(int id, const string &name, int price, int catchRate, const string &type) : Item(id, name, price, type),
                                                                                 catchRate(catchRate) {}
 
 BallItem::BallItem() {}
@@ -36,7 +35,7 @@ void BallItem::catching(Pokemon *pokemon, bool *endBattle) {
     if(!canCatch){
         cout << "La capture a \202chou\202." << endl;
     }else{
-        cout << pokemon->getName() << " a \202t\202 captur\202 !" << endl;
+        cout << pokemon->getName() << " a \202t\202 captur\202 !\n" << endl;
        *endBattle = true;
     }
     return;

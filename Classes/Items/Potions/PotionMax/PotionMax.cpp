@@ -10,10 +10,6 @@ PotionMax::PotionMax(int id, const std::string &name, int price, const std::stri
                                                                                                                  type,
                                                                                                                  hpHeal) {}
 
-void PotionMax::heal(Pokemon pokemon) {
-    pokemon.setCurrentHp(pokemon.getMaxHp());
-}
-
 
 
 

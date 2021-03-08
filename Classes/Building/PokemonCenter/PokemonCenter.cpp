@@ -11,7 +11,6 @@ PokemonCenter::PokemonCenter(int id, const string &name) : Building(id, name) {}
 
 void PokemonCenter::healPokemons(Trainer *trainer) {
     for(unsigned i=0; i < trainer->teams.size(); ++i){
-        cout << trainer->teams[i].getName() << endl;
         trainer->teams[i].setCurrentHp(trainer->teams[i].getMaxHp());
         for(unsigned j=0; j < trainer->teams[i].moves.size(); ++j){
             trainer->teams[i].moves[j].setPowerPoints(trainer->teams[i].moves[j].getMaxPowerPoints());

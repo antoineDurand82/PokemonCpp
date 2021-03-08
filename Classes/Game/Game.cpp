@@ -4,7 +4,6 @@
 
 #include "Game.h"
 #include "../Trainer/Trainer.h"
-#include "../Building/PokemonCenter/PokemonCenter.h"
 #include <iostream>
 
 using namespace std;

@@ -3,7 +3,6 @@
 //
 
 #include "Init.h"
-#include "../../Classes/Game/Game.h"
 
 using namespace std;
 
@@ -12,7 +11,6 @@ int log_types(){
     cout << "Initialisation des types en cours :" << endl;
     return 1;
 }
-
 int a = log_types();
 
 PokemonType ACIER = {"ACIER", {"ACIER", "EAU", "ELECTRIK", "FEU"}, {"FEE", "GLACE", "ROCHE"}, {}, {"COMBAT", "FEU", "SOL"}, {"ACIER", "DRAGON", "FEE", "VOL", "INSECTE", "PLANTE", "GLACE", "NORMAL", "PSY", "ROCHE"}, {"POISON"}};
@@ -70,15 +68,15 @@ Move Cascade = {"Cascade", EAU, 80, 100, 15, 15};
 Move Hydrocanon = {"Hydrocanon", EAU, 110, 80, 5, 5};
 
 // Attaque Electrik
-Move Eclair = {"\202clair", ELECTRIK, 40, 100, 30, 30};
+Move Eclair = {"\220clair", ELECTRIK, 40, 100, 30, 30};
 Move Tonnerre = {"Tonnerre", ELECTRIK, 90, 100, 15, 15};
 Move FatalFoudre = {"Fatal-Foudre", ELECTRIK, 110, 70, 10, 10};
-Move Etincelle = {"\202tincelle", ELECTRIK, 120, 100, 15, 15};
+Move Etincelle = {"\220tincelle", ELECTRIK, 120, 100, 15, 15};
 
 // Attaque Fee
-Move VoixEnjoleuse = {"Voix enjôleuse", FEE, 40, 100, 15, 15};
-Move Calinerie = {"Câlinerie", FEE, 90, 90, 10, 10};
-Move EclatMagique = {"\202clat Magique", FEE, 80, 100, 10, 10};
+Move VoixEnjoleuse = {"Voix enj\223leuse", FEE, 40, 100, 15, 15};
+Move Calinerie = {"C\210linerie", FEE, 90, 90, 10, 10};
+Move EclatMagique = {"\220clat Magique", FEE, 80, 100, 10, 10};
 Move PouvoirLunaire = {"Pouvoir Lunaire", FEE, 95, 100, 15, 15};
 
 // Attaque Feu
@@ -95,7 +93,7 @@ Move Avalanche = {"Avalanche", GLACE, 60, 100, 10, 10};
 
 // Attaque Insecte
 Move Taillade = {"Taillade", INSECTE, 40, 95, 20, 20};
-Move Piqure = {"Piqûre", INSECTE, 60, 100, 20, 20};
+Move Piqure = {"Piq\226re", INSECTE, 60, 100, 20, 20};
 Move PlaieCroix = {"Plaie Croix", INSECTE, 80, 100, 15, 15};
 Move Bourdon = {"Bourdon", INSECTE, 90, 100, 10, 10};
 
@@ -138,7 +136,7 @@ Move TirDeBoue = {"Tir de Boue", SOL, 55, 95, 15, 15};
 Move Telluriforce = {"Telluriforce", SOL, 90, 100, 10, 10};
 
 // Attaque Spectre
-Move Etonnement = {"\202tonnement", SPECTRE, 30, 100, 15, 15};
+Move Etonnement = {"\220tonnement", SPECTRE, 30, 100, 15, 15};
 Move Lechouille = {"L\202chouille", SPECTRE, 30, 100, 30, 30};
 Move BallOmbre = {"Ball'Ombre", SPECTRE, 80, 100, 15, 15};
 Move VentMauvais = {"Vent Mauvais", SPECTRE, 60, 100, 5, 5};
@@ -146,7 +144,7 @@ Move VentMauvais = {"Vent Mauvais", SPECTRE, 60, 100, 5, 5};
 // Attaque T\202n\212bres
 Move Assurance = {"Assurance", TENEBRES, 60, 100, 10, 10};
 Move Morsure = {"Morsure", TENEBRES, 60, 100, 25, 25};
-Move Machouille = {"Mâchouille", TENEBRES, 80, 100, 15, 15};
+Move Machouille = {"M\210chouille", TENEBRES, 80, 100, 15, 15};
 Move Vibrobscur = {"Vibrobscur", TENEBRES, 80, 100, 15, 15};
 
 // Move Vol
@@ -273,10 +271,10 @@ Pokeball PokeBall = {1, "Pokeball", 200, 40, "ball"};
 Superball SuperBall = {2, "SuperBall", 600, 60, "ball"};
 Hyperball HyperBall = {3, "HyperBall", 1200, 80, "ball"};
 
-HealItem PotionItem = {1, "Potion", 300, "potion", 20};
-HealItem SuperPotionItem = {2, "Super Potion", 700, "potion", 50};
-HealItem HyperPotionItem = {3, "Hyper Potion", 1200, "potion", 120};
-HealItem PotionMaxItem = {4, "Potion Max", 2500, "potion", 999};
+Potion PotionItem = {1, "Potion", 300, "potion", 20};
+SuperPotion SuperPotionItem = {2, "Super Potion", 700, "potion", 50};
+HyperPotion HyperPotionItem = {3, "Hyper Potion", 1200, "potion", 120};
+PotionMax PotionMaxItem = {4, "Potion Max", 2500, "potion", 999};
 
 int log_locations(){
     cout << "Tous les items sont cr\202\202s !" << endl;
@@ -289,32 +287,68 @@ int log_locations(){
 
 int e = log_locations();
 
-Location Plaine = Location("Plaine", {Majaspic, Arcanin});
-Location Montagne = Location("Montagne", {Charkos, Gigalithe});
-Location Grotte = Location("Grotte", {Darkrai, Registeel});
-Location Ocean = Location("Ocean", {Tortank, Wailord});
-Location Ciel = Location("Ciel", {Boreas, Roucarnage});
+Location Plaine = {"Plaine", {Majaspic, Arcanin, Absol, Alakazam, Pachyradjah, Luxrai, Typhlosion}};
+Location Montagne = {"Montagne", {Charkos, Gigalithe, Tranchodon, Polagriffe, Oniglali, Ronflex, Melodelfe}};
+Location Grotte = {"Grotte", {Darkrai, Registeel, Triopikeur, Groudon, Noctunoir, Branette, Hariyama}};
+Location Ocean = {"Ocean", {Tortank, Wailord}};
+Location Ciel = {"Ciel", {Boreas, Roucarnage, Mewtwo}};
+Location Foret = {"For\210t", {Melokrik, Colossinge, Raichu, Nymphali, Scarabrute}};
+Location Marais = {"Marais", {Miasmax, Grotadmorv, Jungko, Kangourex, Muplodocus}};
+
+int log_world(){
+    cout << "D\202couverte du monde Hoenn compl\212te!" << endl;
+    cout << "----------------------------------------------" << endl;
+    cout << "\n" << endl;
+    cout << "----------------------------------------------" << endl;
+    cout << "Gestation de votre personne en cours !" << endl;
+    return 1;
+}
+
+int f = log_world();
+
+
+Trainer Sacha = {1,  "sacha", {Darkrai, Tortank, Charkos, Branette, Muplodocus},
+                 {Registeel, Arcanin}, 5000, {HyperPotionItem, PotionMaxItem},
+                 {PokeBall, HyperBall}};
+
+
+int log_trainer(){
+    cout << "Vous venez de na\214tre !" << endl;
+    cout << "----------------------------------------------" << endl;
+    cout << "\n" << endl;
+    cout << "----------------------------------------------" << endl;
+    cout << "Construction des pokemon center." << endl;
+    return 1;
+}
+
+int g = log_trainer();
+
+PokemonCenter pokemonCenter = {1, "Centre"};
+
+int log_pokemonCenter(){
+    cout << "Tout les pokemon Center sont sortis du sol !" << endl;
+    cout << "----------------------------------------------" << endl;
+    cout << "\n" << endl;
+    cout << "----------------------------------------------" << endl;
+    cout << "Lancement de la vie et de la partie sous-peu." << endl;
+    return 1;
+}
+
+int h = log_pokemonCenter();
+
+Game pokemonCPP = {Sacha, pokemonCenter};
 
 int log_end(){
-    cout << "Vous avez d\202couvert le monde Hoenn !" << endl;
+    cout << "La vie vient de d\202marer !" << endl;
     cout << "----------------------------------------------" << endl;
     cout << "\n" << endl;
     cout << "----------------------------------------------" << endl;
     cout << "Initialisation termin\202e, amusez vous bien !" << endl;
     cout << "\n" << endl;
     cout << "\n" << endl;
-    cout << "\n" << endl;
     return 1;
 }
 
-int f = log_end();
-
-Trainer Sacha = {1,  "sacha", {Darkrai, Tortank, Tortank, Tortank, Tortank},
-                 {Registeel, Arcanin}, 5000, {HyperPotionItem, PotionMaxItem},
-                 {PokeBall, HyperBall}};
-
-PokemonCenter pokemonCenter = {1, "Centre"};
+int i = log_end();
 
 
-
-Game pokemonCPP = Game(Sacha, pokemonCenter);

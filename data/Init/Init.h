@@ -203,6 +203,8 @@ extern Location Ocean;
 extern Location Grotte;
 extern Location Montagne;
 extern Location Ciel;
+extern Location Foret;
+extern Location Marais;
 
 // Extern Items
 // -----------------------------
@@ -211,10 +213,10 @@ extern Pokeball PokeBall;
 extern Superball SuperBall;
 extern Hyperball HyperBall;
 
-extern HealItem PotionItem;
-extern HealItem SuperPotionItem;
-extern HealItem HyperPotionItem;
-extern HealItem PotionMaxItem;
+extern Potion PotionItem;
+extern SuperPotion SuperPotionItem;
+extern HyperPotion HyperPotionItem;
+extern PotionMax PotionMaxItem;
 
 // Extern Trainer
 // -----------------------------

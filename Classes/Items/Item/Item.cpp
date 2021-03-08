@@ -3,14 +3,15 @@
 //
 
 #include "Item.h"
-#include "../../Pokemon/Pokemon.h"
 #include "../../Trainer/Trainer.h"
 
-Item::Item(int id, const std::string &itemname, int price, const std::string &type) : id(id), itemname(itemname), price(price), type(type) {}
+using namespace std;
+
+Item::Item(int id, const string &itemname, int price, const string &type) : id(id), itemname(itemname), price(price), type(type) {}
 
 Item::Item() {}
 
-const std::string &Item::getName() const {
+const string &Item::getName() const {
     return itemname;
 }
 
