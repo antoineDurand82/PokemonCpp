@@ -324,6 +324,7 @@ int log_trainer(){
 int g = log_trainer();
 
 PokemonCenter pokemonCenter = {1, "Centre"};
+Shop shop = {1, "shop", {PotionItem, SuperPotionItem, HyperPotionItem, PotionMaxItem, PokeBall, SuperBall, HyperBall}};
 
 int log_pokemonCenter(){
     cout << "Tout les pokemon Center sont sortis du sol !" << endl;

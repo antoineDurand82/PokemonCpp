@@ -9,10 +9,9 @@
 #include "../Building.h"
 #include "../../Items/Item/Item.h"
 #include "vector"
+#include "../../Trainer/Trainer.h"
 
 class Shop : public Building {
-private:
-    std::vector<Item> stock;
 public:
     Shop(int id, const std::string &name, const std::vector<Item> &stock);
 
@@ -20,6 +19,17 @@ public:
 
     void setStock(const std::vector<Item> &stock);
 
+    void buy(Trainer *trainer);
+
+    std::vector<Item> stock;
+
+    void listItems();
+
+    void welcomeToTheShop(Trainer *trainer);
+
+    void askItems();
+
+    void askItems(Trainer *trainer);
 };
 
 #endif //POKEMONCPP_SHOP_H

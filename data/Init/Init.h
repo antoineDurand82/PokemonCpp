@@ -19,6 +19,7 @@
 #include "../../Classes/Items/Pokeballs/Hyperball/Hyperball.h"
 #include "../../Classes/Building/PokemonCenter/PokemonCenter.h"
 #include "../../Classes/Game/Game.h"
+#include "../../Classes/Building/Shop/Shop.h"
 
 // Extern des pokemon type
 // -----------------------------
@@ -223,13 +224,15 @@ extern PotionMax PotionMaxItem;
 
 extern Trainer Sascha;
 
-// Extern PokemonCenter
+// Extern PokemonCenter & Shop
 // -----------------------------
 
 extern PokemonCenter pokemonCenter;
+extern Shop shop;
 
 // Extern Game
 // -----------------------------
 
 extern Game pokemonCPP;
+
 #endif //POKEMONCPP_INIT_H
