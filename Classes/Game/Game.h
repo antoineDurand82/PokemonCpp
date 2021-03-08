@@ -8,17 +8,21 @@
 
 #include "../Trainer/Trainer.h"
 #include "../Building/PokemonCenter/PokemonCenter.h"
+#include "../Building/Shop/Shop.h"
 
 class Game {
 private:
     Trainer trainer;
     PokemonCenter  pokeCenter;
+    Shop shop;
 public:
-    Game(const Trainer &trainer, const PokemonCenter &pokeCenter);
+    Game(const Trainer &trainer, const PokemonCenter &pokeCenter, const Shop &shop);
 
     void play();
 
     void usePc();
+
+    void useShop();
 };
 
 

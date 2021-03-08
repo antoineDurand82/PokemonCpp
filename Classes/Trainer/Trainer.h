@@ -16,9 +16,9 @@
 class Trainer {
 
 private:
-    int id;
+    unsigned int id;
     std::string  name;
-    int money;
+    unsigned int money;
 
 
 public:
@@ -30,29 +30,13 @@ public:
     std::vector<HealItem> healInventory;
     std::vector<BallItem> ballInventory;
 
-    int getId() const;
-
-    void setId(int id);
-
     const std::string &getName() const;
 
-    void setName(const std::string &name);
-
     const std::vector<Pokemon> &getTeams() const;
-
-    void setTeams(const std::vector<Pokemon> &teams);
-
-    const std::vector<Pokemon> &getPc() const;
-
-    void setPc(const std::vector<Pokemon> &pc);
 
     int getMoney() const;
 
     void setMoney(int money);
-
-    const std::vector<Item> &getInventory() const;
-
-    void setInventory(const std::vector<Item> &inventory);
 
     void searchWildPokemon();
 
@@ -72,17 +56,12 @@ public:
 
     const std::vector<HealItem> &getHealInventory() const;
 
-    void setHealInventory(const std::vector<HealItem> &healInventory);
-
     const std::vector<BallItem> &getBallInventory() const;
-
-    void setBallInventory(const std::vector<BallItem> &ballInventory);
 
     void listBallInventory();
 
     void listHealInventory();
 
-    void goToPokemonCenter();
 };
 
 

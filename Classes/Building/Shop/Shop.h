@@ -9,17 +9,26 @@
 #include "../Building.h"
 #include "../../Items/Item/Item.h"
 #include "vector"
+#include "../../Trainer/Trainer.h"
 
 class Shop : public Building {
-private:
-    std::vector<Item> stock;
 public:
-    Shop(int id, const std::string &name, const std::vector<Item> &stock);
+    Shop(int id, const std::string &name, const std::vector<BallItem> &ballStock,
+         const std::vector<HealItem> &healStock);
 
     const std::vector<Item> &getStock() const;
 
-    void setStock(const std::vector<Item> &stock);
+    std::vector<BallItem> ballStock;
+    std::vector<HealItem> healStock;
 
+    void welcomeToTheShop(Trainer *trainer);
+
+
+    void askItems(Trainer *trainer);
+
+    void ballList();
+
+    void healList();
 };
 
 #endif //POKEMONCPP_SHOP_H

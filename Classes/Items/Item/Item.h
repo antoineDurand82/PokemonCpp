@@ -18,8 +18,6 @@ public:
     std::string itemname;
     int price;
     std::string type;
-    int catchRate;
-    int hpHeal;
 
     const std::string &getName() const;
 

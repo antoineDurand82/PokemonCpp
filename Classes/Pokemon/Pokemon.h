@@ -31,21 +31,9 @@ public:
 
     void rename(std::string pokemonName);
 
-    int getId() const;
-
-    void setId(int id);
-
-    const std::string &getPokemonName() const;
-
     void setPokemonName(const std::string &pokemonName);
 
     const std::string &getName() const;
-
-    void setName(const std::string &name);
-
-    const PokemonType &getType() const;
-
-    void setType(const PokemonType &type);
 
     int getCurrentHp() const;
 
@@ -53,11 +41,7 @@ public:
 
     int getMaxHp() const;
 
-    void setMaxHp(int maxHp);
-
     const std::vector<Move> &getMoves();
-
-    void setMoves(const std::vector<Move> &moves);
 
     void setIsCaptured(bool isCaptured);
 

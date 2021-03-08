@@ -14,21 +14,10 @@ Trainer::Trainer(int id, const string &name, const vector<Pokemon> &teams, const
                  int money, const vector<HealItem> &healInventory, const vector<BallItem> &ballInventory) : id(id), name(name), teams(teams), pc(pc),
                                                                   money(money), healInventory(healInventory), ballInventory(ballInventory) {}
 
-int Trainer::getId() const {
-    return id;
-}
-
-void Trainer::setId(int id) {
-    Trainer::id = id;
-}
-
 const string &Trainer::getName() const {
     return name;
 }
 
-void Trainer::setName(const string &name) {
-    Trainer::name = name;
-}
 
 const vector<Pokemon> &Trainer::getTeams() const {
     return teams;
@@ -41,40 +30,12 @@ void Trainer::getTeamsToString(){
     return;
 }
 
-void Trainer::setTeams(const vector<Pokemon> &teams) {
-    Trainer::teams = teams;
-}
-
-const vector<Pokemon> &Trainer::getPc() const {
-    return pc;
-}
-
-void Trainer::setPc(const vector<Pokemon> &pc) {
-    Trainer::pc = pc;
-}
-
 int Trainer::getMoney() const {
     return money;
 }
 
 void Trainer::setMoney(int money) {
     Trainer::money = money;
-}
-
-const vector<HealItem> &Trainer::getHealInventory() const {
-    return healInventory;
-}
-
-void Trainer::setHealInventory(const vector<HealItem> &healInventory) {
-    Trainer::healInventory = healInventory;
-}
-
-const vector<BallItem> &Trainer::getBallInventory() const {
-    return ballInventory;
-}
-
-void Trainer::setBallInventory(const vector<BallItem> &ballInventory) {
-    Trainer::ballInventory = ballInventory;
 }
 
 void Trainer::listHealInventory(){
@@ -182,6 +143,7 @@ Trainer::chooseAction(Pokemon *pokemonChoosed, Pokemon *wildPokemon, bool *endBa
 }
 
 void Trainer::battle(Pokemon *wildPokemon){
+    unsigned short nbPokemonDied {0};
     cout << "\nUn " << wildPokemon->getName() << " sauvage est apparu !" << endl;
     cout << "Il poss\212de " << wildPokemon->hpleftOnHpmax() << " hp" << endl;
     Pokemon pokemonChoosed = teams[0];
@@ -193,6 +155,8 @@ void Trainer::battle(Pokemon *wildPokemon){
             if(!wildPokemon->checkAlived()){
                 cout << wildPokemon->getName() << " a maintenant 0 hp" << endl;
                 cout << "Votre " << pokemonChoosed.getName() << " a battu " << wildPokemon->getName() << endl;
+                setMoney(getMoney() + 500);
+                cout << "Vous avez trouv\202 500 pok\202dollars sur la victime." << endl;
                 endBattle = true;
             } else if (wildPokemon->checkAlived()){
                 cout << wildPokemon->getName() << " a maintenant " << wildPokemon->hpleftOnHpmax() << " hp" << endl;
@@ -201,10 +165,9 @@ void Trainer::battle(Pokemon *wildPokemon){
                 if(!pokemonChoosed.checkAlived()){
                     cout << pokemonChoosed.getName() << " a maintenant 0 hp" << endl;
                     cout << "Votre " << pokemonChoosed.getName() << " a \202t\202 battu par " << wildPokemon->getName() << endl;
-                    unsigned short nbPokemonDied;
                     for (int i = 0; i < this->getTeams().size() - 1; ++i) {
                         if(this->getTeams()[i].getCurrentHp() <= 0){
-                            nbPokemonDied++;
+                            nbPokemonDied += 1;
                         }
                     }
                     if(nbPokemonDied == this->getTeams().size()){
@@ -255,8 +218,10 @@ void Trainer::useItem(Pokemon *pokemonChoosed, Pokemon *wildPokemon, bool *endBa
                 this->ballInventory.erase(this->ballInventory.begin() + (pokeballChoosed - 1));
                 if(this->teams.size() < 6){
                     this->teams.push_back(*wildPokemon);
+                    cout << "Le pok\202mon a \202t\202 ajout\202 \205 ton \202quipe !" << endl;
                 } else {
                     this->pc.push_back(*wildPokemon);
+                    cout << "Le pok\202mon a \202t\202 ajout\202 \205 ton PC !" << endl;
                 }
             }
             break;

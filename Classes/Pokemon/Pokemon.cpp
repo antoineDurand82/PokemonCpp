@@ -4,6 +4,7 @@
 
 #include "Pokemon.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
 Pokemon::Pokemon(int id, const string &name, const PokemonType &type, int currentHp, int maxHp,
@@ -30,36 +31,12 @@ bool Pokemon::canUseTM(Move *move){
     return false;
 }
 
-int Pokemon::getId() const {
-    return id;
-}
-
-void Pokemon::setId(int id) {
-    Pokemon::id = id;
-}
-
-const string &Pokemon::getPokemonName() const {
-    return pokemonName;
-}
-
 void Pokemon::setPokemonName(const string &pokemonName) {
     Pokemon::pokemonName = pokemonName;
 }
 
 const string &Pokemon::getName() const {
     return name;
-}
-
-void Pokemon::setName(const string &name) {
-    Pokemon::name = name;
-}
-
-const PokemonType &Pokemon::getType() const {
-    return type;
-}
-
-void Pokemon::setType(const PokemonType &type) {
-    Pokemon::type = type;
 }
 
 int Pokemon::getCurrentHp() const {
@@ -74,16 +51,8 @@ int Pokemon::getMaxHp() const {
     return maxHP;
 }
 
-void Pokemon::setMaxHp(int maxHp) {
-    maxHP = maxHp;
-}
-
 const vector<Move> &Pokemon::getMoves() {
     return moves;
-}
-
-void Pokemon::setMoves(const vector<Move> &moves) {
-    Pokemon::moves = moves;
 }
 
 bool Pokemon::getIsCaptured() const {
