@@ -42,9 +42,9 @@ public:
 
     void runAway(bool *pBoolean);
 
-    void chooseAction(Pokemon *pokemonChoosed, Pokemon *wildPokemon, bool *pBoolean, const std::vector<Move> *pokemonMoves);
+    void chooseAction(Pokemon &pokemonChoosed, Pokemon *wildPokemon, bool *pBoolean, const std::vector<Move> *pokemonMoves);
 
-    void changePokemon(Pokemon *pPokemon);
+    void changePokemon(Pokemon &pPokemon, bool *endBattle);
 
     void chooseAttack(Pokemon *pokemonChoosed, Pokemon *wildPokemon, const std::vector<Move> *pokemonMoves);
 
@@ -52,7 +52,7 @@ public:
 
     void getTeamsToString();
 
-    void useItem(Pokemon *pokemonChoosed, Pokemon *wildPokemon, bool *endBattle);
+    void useItem(Pokemon &pokemonChoosed, Pokemon *wildPokemon, bool *endBattle);
 
     const std::vector<HealItem> &getHealInventory() const;
 
@@ -62,6 +62,7 @@ public:
 
     void listHealInventory();
 
+    bool teamsAlived();
 };
 
 

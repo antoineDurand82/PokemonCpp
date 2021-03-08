@@ -42,6 +42,11 @@ void Game::play(){
         switch (actionChoosed) {
             case 1:
                 this->trainer.searchWildPokemon();
+                if(!this->trainer.teamsAlived()){
+                    cout << "\nToute votre \202quipe est KO." << endl;
+                    cout << "Vous allez \210tre automatiquement amen\202 au centre pok\202mon le plus proche pour soigner vos pok\202mons !" << endl;
+                    this->pokeCenter.healPokemons(&trainer);
+                }
                 break;
             case 2:
                 usePc();

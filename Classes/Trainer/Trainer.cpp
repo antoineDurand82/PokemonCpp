@@ -106,7 +106,7 @@ void Trainer::searchWildPokemon() {
 }
 
 void
-Trainer::chooseAction(Pokemon *pokemonChoosed, Pokemon *wildPokemon, bool *endBattle, const vector<Move> *pokemonMoves) {
+Trainer::chooseAction(Pokemon &pokemonChoosed, Pokemon *wildPokemon, bool *endBattle, const vector<Move> *pokemonMoves) {
     unsigned short actionChoosed;
     // chooseAction: demande à l'utilisateur quelle action il souhaite faire
     cout << "\nQue souhaitez vous faire ?" << endl;
@@ -123,13 +123,13 @@ Trainer::chooseAction(Pokemon *pokemonChoosed, Pokemon *wildPokemon, bool *endBa
     cin.ignore(1000, '\n');
     switch (actionChoosed) {
         case 1:
-            chooseAttack(pokemonChoosed, wildPokemon, pokemonMoves);
+            chooseAttack(&pokemonChoosed, wildPokemon, pokemonMoves);
             break;
         case 2:
             useItem(pokemonChoosed, wildPokemon, endBattle);
             break;
         case 3:
-            changePokemon(pokemonChoosed);
+            changePokemon(pokemonChoosed, endBattle);
             break;
         case 4:
             runAway(endBattle);
@@ -146,11 +146,11 @@ void Trainer::battle(Pokemon *wildPokemon){
     unsigned short nbPokemonDied {0};
     cout << "\nUn " << wildPokemon->getName() << " sauvage est apparu !" << endl;
     cout << "Il poss\212de " << wildPokemon->hpleftOnHpmax() << " hp" << endl;
-    Pokemon pokemonChoosed = teams[0];
+    Pokemon &pokemonChoosed = teams[0];
     vector<Move> moves = pokemonChoosed.getMoves();
     bool endBattle = false;
     while (!endBattle){
-        chooseAction(&pokemonChoosed, wildPokemon, &endBattle, &moves);
+        chooseAction(pokemonChoosed, wildPokemon, &endBattle, &moves);
         if(!endBattle){
             if(!wildPokemon->checkAlived()){
                 cout << wildPokemon->getName() << " a maintenant 0 hp" << endl;
@@ -161,21 +161,25 @@ void Trainer::battle(Pokemon *wildPokemon){
             } else if (wildPokemon->checkAlived()){
                 cout << wildPokemon->getName() << " a maintenant " << wildPokemon->hpleftOnHpmax() << " hp" << endl;
                 int damageTaken = wildPokemon->randomAttack();
-                pokemonChoosed.setCurrentHp(pokemonChoosed.getCurrentHp() - damageTaken);
+                if(pokemonChoosed.getCurrentHp() - damageTaken < 0){
+                    pokemonChoosed.setCurrentHp(0);
+                } else {
+                    pokemonChoosed.setCurrentHp(pokemonChoosed.getCurrentHp() - damageTaken);
+                }
                 if(!pokemonChoosed.checkAlived()){
                     cout << pokemonChoosed.getName() << " a maintenant 0 hp" << endl;
                     cout << "Votre " << pokemonChoosed.getName() << " a \202t\202 battu par " << wildPokemon->getName() << endl;
-                    for (int i = 0; i < this->getTeams().size() - 1; ++i) {
+                    for (int i = 0; i < teams.size(); ++i) {
                         if(this->getTeams()[i].getCurrentHp() <= 0){
                             nbPokemonDied += 1;
                         }
                     }
                     if(nbPokemonDied == this->getTeams().size()){
-                        cout << "Tout les pokemon de ton \202quipe n'ont plus d'hp, tu ne peux plus combatre." << endl;
                         endBattle = true;
+                        break;
                     } else{
                         cout << "Tu dois changer de pokemon pour continuer" << endl;
-                        changePokemon(&pokemonChoosed);
+                        changePokemon(pokemonChoosed, &endBattle);
                     }
                 }
                 cout << pokemonChoosed.getName() << " a maintenant " << pokemonChoosed.hpleftOnHpmax() << " hp" << endl;
@@ -190,7 +194,7 @@ void Trainer::runAway(bool *endBattle) {
     return;
 }
 
-void Trainer::useItem(Pokemon *pokemonChoosed, Pokemon *wildPokemon, bool *endBattle){
+void Trainer::useItem(Pokemon &pokemonChoosed, Pokemon *wildPokemon, bool *endBattle){
     unsigned short inventoryChoosed;
     unsigned short pokeballChoosed;
     unsigned short potionChoosed;
@@ -238,7 +242,7 @@ void Trainer::useItem(Pokemon *pokemonChoosed, Pokemon *wildPokemon, bool *endBa
                 cout << "Tu dois me donner un chiffre parmis ceux propos\202s" << endl;
                 return useItem(pokemonChoosed, wildPokemon, endBattle);
             } else {
-                this->healInventory[potionChoosed - 1].heal(pokemonChoosed, &this->healInventory, &potionChoosed);
+                this->healInventory[potionChoosed - 1].heal(&pokemonChoosed, &this->healInventory, &potionChoosed);
             }
             break;
         default:
@@ -249,8 +253,13 @@ void Trainer::useItem(Pokemon *pokemonChoosed, Pokemon *wildPokemon, bool *endBa
     return;
 }
 
-void Trainer::changePokemon(Pokemon *pokemonChoosed) {
+void Trainer::changePokemon(Pokemon &pokemonChoosed, bool *endBattle) {
+    if(teams.size() == 1){
+        cout << "Vous ne poss\212dez que 1 pok\202mon, vous ne pouvez donc pas l'\202changer !" << endl;
+        return;
+    }
     unsigned short pokemonSwitched;
+    Pokemon temp;
     // chooseAction: demande à l'utilisateur quel pokemon envoyer au combat
     cout << "\nQuel pok\202mon souhaitez-vous envoyer au combat ?" << endl;
     cout << "----------------------------------------------" << endl;
@@ -262,68 +271,80 @@ void Trainer::changePokemon(Pokemon *pokemonChoosed) {
     cin.ignore(1000, '\n');
     switch (pokemonSwitched) {
         case 1:
-            if(this->getTeams()[pokemonSwitched - 1].getName() == pokemonChoosed->getName()){
+            if(&teams[pokemonSwitched - 1] == &pokemonChoosed){
                 cout << "Ce pokemon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
-                return changePokemon(pokemonChoosed);
+                return changePokemon(pokemonChoosed, endBattle);
             }else if(this->getTeams()[pokemonSwitched - 1].getCurrentHp() <= 0){
                 cout << "Ce pokemon n'est plus en mesure de combatre, tu ne peux pas le s\202lectionner" << endl;
-                return changePokemon(pokemonChoosed);
+                return changePokemon(pokemonChoosed, endBattle);
             }
-            *pokemonChoosed = this->getTeams()[pokemonSwitched - 1];
+            temp = pokemonChoosed;
+            pokemonChoosed = this->getTeams()[pokemonSwitched - 1];
+            teams[pokemonSwitched - 1] = temp;
             break;
         case 2:
-            if(this->getTeams()[pokemonSwitched - 1].getName() == pokemonChoosed->getName()){
+            if(&teams[pokemonSwitched - 1] == &pokemonChoosed){
                 cout << "Ce pokemon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
-                return changePokemon(pokemonChoosed);
+                return changePokemon(pokemonChoosed, endBattle);
             }else if(this->getTeams()[pokemonSwitched - 1].getCurrentHp() <= 0){
                 cout << "Ce pokemon n'est plus en mesure de combatre, tu ne peux pas le s\202lectionner" << endl;
-                return changePokemon(pokemonChoosed);
+                return changePokemon(pokemonChoosed, endBattle);
             }
-            *pokemonChoosed = this->getTeams()[pokemonSwitched - 1];
+            temp = pokemonChoosed;
+            pokemonChoosed = this->getTeams()[pokemonSwitched - 1];
+            teams[pokemonSwitched - 1] = temp;
             break;
         case 3:
-            if(this->getTeams()[pokemonSwitched - 1].getName() == pokemonChoosed->getName()){
+            if(&teams[pokemonSwitched - 1] == &pokemonChoosed){
                 cout << "Ce pokemon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
-                return changePokemon(pokemonChoosed);
+                return changePokemon(pokemonChoosed, endBattle);
             }else if(this->getTeams()[pokemonSwitched - 1].getCurrentHp() <= 0){
                 cout << "Ce pokemon n'est plus en mesure de combatre, tu ne peux pas le s\202lectionner" << endl;
-                return changePokemon(pokemonChoosed);
+                return changePokemon(pokemonChoosed, endBattle);
             }
-            *pokemonChoosed = this->getTeams()[pokemonSwitched - 1];
+            temp = pokemonChoosed;
+            pokemonChoosed = this->getTeams()[pokemonSwitched - 1];
+            teams[pokemonSwitched - 1] = temp;
             break;
         case 4:
-            if(this->getTeams()[pokemonSwitched - 1].getName() == pokemonChoosed->getName()){
+            if(&teams[pokemonSwitched - 1] == &pokemonChoosed){
                 cout << "Ce pokemon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
-                return changePokemon(pokemonChoosed);
+                return changePokemon(pokemonChoosed, endBattle);
             }else if(this->getTeams()[pokemonSwitched - 1].getCurrentHp() <= 0){
                 cout << "Ce pokemon n'est plus en mesure de combatre, tu ne peux pas le s\202lectionner" << endl;
-                return changePokemon(pokemonChoosed);
+                return changePokemon(pokemonChoosed, endBattle);
             }
-            *pokemonChoosed = this->getTeams()[pokemonSwitched - 1];
+            temp = pokemonChoosed;
+            pokemonChoosed = this->getTeams()[pokemonSwitched - 1];
+            teams[pokemonSwitched - 1] = temp;
             break;
         case 5:
-            if(this->getTeams()[pokemonSwitched - 1].getName() == pokemonChoosed->getName()){
+            if(&teams[pokemonSwitched - 1] == &pokemonChoosed){
                 cout << "Ce pokemon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
-                return changePokemon(pokemonChoosed);
+                return changePokemon(pokemonChoosed, endBattle);
             }else if(this->getTeams()[pokemonSwitched - 1].getCurrentHp() <= 0){
                 cout << "Ce pokemon n'est plus en mesure de combatre, tu ne peux pas le s\202lectionner" << endl;
-                return changePokemon(pokemonChoosed);
+                return changePokemon(pokemonChoosed, endBattle);
             }
-            *pokemonChoosed = this->getTeams()[pokemonSwitched - 1];
+            temp = pokemonChoosed;
+            pokemonChoosed = this->getTeams()[pokemonSwitched - 1];
+            teams[pokemonSwitched - 1] = temp;
             break;
         case 6:
-            if(this->getTeams()[pokemonSwitched - 1].getName() == pokemonChoosed->getName()){
+            if(&teams[pokemonSwitched - 1] == &pokemonChoosed){
                 cout << "Ce pokemon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
-                return changePokemon(pokemonChoosed);
+                return changePokemon(pokemonChoosed, endBattle);
             } else if(this->getTeams()[pokemonSwitched - 1].getCurrentHp() <= 0){
                 cout << "Ce pokemon n'est plus en mesure de combatre, tu ne peux pas le s\202lectionner" << endl;
-                return changePokemon(pokemonChoosed);
+                return changePokemon(pokemonChoosed, endBattle);
             }
-            *pokemonChoosed = this->getTeams()[pokemonSwitched - 1];
+            temp = pokemonChoosed;
+            pokemonChoosed = this->getTeams()[pokemonSwitched - 1];
+            teams[pokemonSwitched - 1] = temp;
             break;
         default:
             cout << "Tu dois me donner un chiffre parmis ceux propos\202s" << endl;
-            return changePokemon(pokemonChoosed);
+            return changePokemon(pokemonChoosed, endBattle);
     }
     return;
 
@@ -399,4 +420,17 @@ void Trainer::chooseAttack(Pokemon *pokemonChoosed, Pokemon *wildPokemon, const 
     }
     return;
 
+}
+
+bool Trainer::teamsAlived(){
+    unsigned short countDied;
+    for (int i = 0; i < teams.size(); ++i) {
+        if(!teams[i].checkAlived()){
+            ++countDied;
+        }
+    }
+    if(countDied == teams.size()){
+        return false;
+    }
+    return true;
 }
