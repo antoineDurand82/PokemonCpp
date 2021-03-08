@@ -257,7 +257,7 @@ Pokemon Boreas = {35, "Bor\202as", VOL, 300, 300, {Aeropique, LameDAir, FatalFou
 Pokemon Roucarnage = {36, "Roucarnage", VOL, 200, 200, {Picpic, Aeropique, Rapace, LameDAir}, false};
 
 int log_items(){
-    cout << "Tous les pokemons sont n\202s !" << endl;
+    cout << "Tous les pok\202mons sont n\202s !" << endl;
     cout << "----------------------------------------------" << endl;
     cout << "\n" << endl;
     cout << "----------------------------------------------" << endl;

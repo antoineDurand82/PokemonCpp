@@ -21,7 +21,7 @@ void Game::play(){
         this->trainer.pc[i].setIsCaptured(true);
     }
     bool endGame = false;
-    cout << "Bonjour, vous venez de d\202marer une partie de pokemon en CPP" << endl;
+    cout << "Bonjour, vous venez de d\202marer une partie de pok\202mon en CPP" << endl;
     cout << "----------------------------------------------------------------" << endl;
     cout << "\n" << endl;
     while (!endGame){
@@ -30,8 +30,8 @@ void Game::play(){
         cout << "Que souhaitez vous faire ?" << endl;
         cout << "Vous avez le choix entre 4 actions diff\202rentes: " << endl;
         cout << "----------------------------------------------" << endl;
-        cout << "1. Aller combattre un pokemon sauvage" << endl;
-        cout << "2. Aller au pokemon Center" << endl;
+        cout << "1. Aller combattre un pok\202mon sauvage" << endl;
+        cout << "2. Aller au pok\202mon Center" << endl;
         cout << "3. Aller au magasin" << endl;
         cout << "4. Quitter le jeu" << endl;
         cout << "----------------------------------------------" << endl;
@@ -72,7 +72,7 @@ void Game::usePc() {
     cout << "Vous avez le choix entre 2 actions diff\202rentes: " << endl;
     cout << "----------------------------------------------" << endl;
     cout << "1. Aller au pc" << endl;
-    cout << "2. Soigner vos pokemon" << endl;
+    cout << "2. Soigner vos pok\202mon" << endl;
     cout << "----------------------------------------------" << endl;
     cout << "Pour s\202lectionner l'une des actions vous avez juste \205 entrer le chiffre correspondant :" << endl;
     cin >> actionChoosed;

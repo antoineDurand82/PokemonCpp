@@ -114,7 +114,7 @@ Trainer::chooseAction(Pokemon &pokemonChoosed, Pokemon *wildPokemon, bool *endBa
     cout << "----------------------------------------------" << endl;
     cout << "1. Choisir une attaque" << endl;
     cout << "2. Prend un item dans le sac" << endl;
-    cout << "3. Changer de Pokemon" << endl;
+    cout << "3. Changer de Pok\202mon" << endl;
     cout << "4. Fuir" << endl;
     cout << "----------------------------------------------" << endl;
     cout << "Pour s\202lectionner l'une des actions vous avez juste \205 entrer le chiffre correspondant :" << endl;
@@ -178,7 +178,7 @@ void Trainer::battle(Pokemon *wildPokemon){
                         endBattle = true;
                         break;
                     } else{
-                        cout << "Tu dois changer de pokemon pour continuer" << endl;
+                        cout << "Tu dois changer de pok\202mon pour continuer" << endl;
                         changePokemon(pokemonChoosed, &endBattle);
                     }
                 }
@@ -272,10 +272,10 @@ void Trainer::changePokemon(Pokemon &pokemonChoosed, bool *endBattle) {
     switch (pokemonSwitched) {
         case 1:
             if(&teams[pokemonSwitched - 1] == &pokemonChoosed){
-                cout << "Ce pokemon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
+                cout << "Ce pok\202mon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
                 return changePokemon(pokemonChoosed, endBattle);
             }else if(this->getTeams()[pokemonSwitched - 1].getCurrentHp() <= 0){
-                cout << "Ce pokemon n'est plus en mesure de combatre, tu ne peux pas le s\202lectionner" << endl;
+                cout << "Ce pok\202mon n'est plus en mesure de combatre, tu ne peux pas le s\202lectionner" << endl;
                 return changePokemon(pokemonChoosed, endBattle);
             }
             temp = pokemonChoosed;
@@ -284,10 +284,10 @@ void Trainer::changePokemon(Pokemon &pokemonChoosed, bool *endBattle) {
             break;
         case 2:
             if(&teams[pokemonSwitched - 1] == &pokemonChoosed){
-                cout << "Ce pokemon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
+                cout << "Ce pok\202mon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
                 return changePokemon(pokemonChoosed, endBattle);
             }else if(this->getTeams()[pokemonSwitched - 1].getCurrentHp() <= 0){
-                cout << "Ce pokemon n'est plus en mesure de combatre, tu ne peux pas le s\202lectionner" << endl;
+                cout << "Ce pok\202mon n'est plus en mesure de combatre, tu ne peux pas le s\202lectionner" << endl;
                 return changePokemon(pokemonChoosed, endBattle);
             }
             temp = pokemonChoosed;
@@ -296,10 +296,10 @@ void Trainer::changePokemon(Pokemon &pokemonChoosed, bool *endBattle) {
             break;
         case 3:
             if(&teams[pokemonSwitched - 1] == &pokemonChoosed){
-                cout << "Ce pokemon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
+                cout << "Ce pok\202mon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
                 return changePokemon(pokemonChoosed, endBattle);
             }else if(this->getTeams()[pokemonSwitched - 1].getCurrentHp() <= 0){
-                cout << "Ce pokemon n'est plus en mesure de combatre, tu ne peux pas le s\202lectionner" << endl;
+                cout << "Ce pok\202mon n'est plus en mesure de combatre, tu ne peux pas le s\202lectionner" << endl;
                 return changePokemon(pokemonChoosed, endBattle);
             }
             temp = pokemonChoosed;
@@ -308,10 +308,10 @@ void Trainer::changePokemon(Pokemon &pokemonChoosed, bool *endBattle) {
             break;
         case 4:
             if(&teams[pokemonSwitched - 1] == &pokemonChoosed){
-                cout << "Ce pokemon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
+                cout << "Ce pok\202mon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
                 return changePokemon(pokemonChoosed, endBattle);
             }else if(this->getTeams()[pokemonSwitched - 1].getCurrentHp() <= 0){
-                cout << "Ce pokemon n'est plus en mesure de combatre, tu ne peux pas le s\202lectionner" << endl;
+                cout << "Ce pok\202mon n'est plus en mesure de combatre, tu ne peux pas le s\202lectionner" << endl;
                 return changePokemon(pokemonChoosed, endBattle);
             }
             temp = pokemonChoosed;
@@ -320,10 +320,10 @@ void Trainer::changePokemon(Pokemon &pokemonChoosed, bool *endBattle) {
             break;
         case 5:
             if(&teams[pokemonSwitched - 1] == &pokemonChoosed){
-                cout << "Ce pokemon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
+                cout << "Ce pok\202mon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
                 return changePokemon(pokemonChoosed, endBattle);
             }else if(this->getTeams()[pokemonSwitched - 1].getCurrentHp() <= 0){
-                cout << "Ce pokemon n'est plus en mesure de combatre, tu ne peux pas le s\202lectionner" << endl;
+                cout << "Ce pok\202mon n'est plus en mesure de combatre, tu ne peux pas le s\202lectionner" << endl;
                 return changePokemon(pokemonChoosed, endBattle);
             }
             temp = pokemonChoosed;
@@ -332,10 +332,10 @@ void Trainer::changePokemon(Pokemon &pokemonChoosed, bool *endBattle) {
             break;
         case 6:
             if(&teams[pokemonSwitched - 1] == &pokemonChoosed){
-                cout << "Ce pokemon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
+                cout << "Ce pok\202mon est d\202j\205 au combat, tu ne peux pas le s\202lectionner" << endl;
                 return changePokemon(pokemonChoosed, endBattle);
             } else if(this->getTeams()[pokemonSwitched - 1].getCurrentHp() <= 0){
-                cout << "Ce pokemon n'est plus en mesure de combatre, tu ne peux pas le s\202lectionner" << endl;
+                cout << "Ce pok\202mon n'est plus en mesure de combatre, tu ne peux pas le s\202lectionner" << endl;
                 return changePokemon(pokemonChoosed, endBattle);
             }
             temp = pokemonChoosed;
