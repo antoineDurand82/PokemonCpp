@@ -81,7 +81,7 @@ Move PouvoirLunaire = {"Pouvoir Lunaire", FEE, 95, 100, 15, 15};
 
 // Attaque Feu
 Move Flammeche = {"Flamm\212che", FEU, 40, 100, 25, 25};
-Move LanceFlamme = {"LanceFlamme", FEU, 90, 100, 15, 15};
+Move LanceFlamme = {"Lance-Flamme", FEU, 90, 100, 15, 15};
 Move RoueDeFeu = {"Roue de Feu", FEU, 60, 100, 25, 25};
 Move Deflagration = {"D\202flagration", FEU, 110, 85, 5, 5};
 
@@ -103,7 +103,7 @@ Move Coupe = {"Coupe", NORMAL, 50, 95, 30, 30};
 Move Ultimawashi = {"Ultimawashi", NORMAL, 120, 75, 5, 5};
 Move GigaImpact = {"Giga Impact", NORMAL, 150, 90, 5, 5};
 Move ViveAttaque = {"Vive-Attaque", NORMAL, 40, 100, 30, 30};
-Move VitesseExtreme = {"Vitesse-Extreme", NORMAL, 80, 100, 5, 5};
+Move VitesseExtreme = {"Vitesse-\322xtreme", NORMAL, 80, 100, 5, 5};
 
 // Attaque Plante
 Move TranchHerbe = {"Tranch'Herbe", PLANTE, 55, 95, 25, 25};
@@ -144,7 +144,7 @@ Move VentMauvais = {"Vent Mauvais", SPECTRE, 60, 100, 5, 5};
 // Attaque T\202n\212bres
 Move Assurance = {"Assurance", TENEBRES, 60, 100, 10, 10};
 Move Morsure = {"Morsure", TENEBRES, 60, 100, 25, 25};
-Move Machouille = {"M\210chouille", TENEBRES, 80, 100, 15, 15};
+Move Machouille = {"M\203chouille", TENEBRES, 80, 100, 15, 15};
 Move Vibrobscur = {"Vibrobscur", TENEBRES, 80, 100, 15, 15};
 
 // Move Vol
@@ -317,7 +317,7 @@ int log_trainer(){
     cout << "----------------------------------------------" << endl;
     cout << "\n" << endl;
     cout << "----------------------------------------------" << endl;
-    cout << "Construction des pokemon center." << endl;
+    cout << "Construction des b\203timents." << endl;
     return 1;
 }
 
@@ -327,7 +327,7 @@ PokemonCenter pokemonCenter = {1, "Centre"};
 Shop shop = {1, "shop", {PokeBall, SuperBall, HyperBall}, {PotionItem, SuperPotionItem, HyperPotionItem, PotionMaxItem}};
 
 int log_pokemonCenter(){
-    cout << "Tout les pokemon Center sont sortis du sol !" << endl;
+    cout << "Les b\203 sont sortis du sol !" << endl;
     cout << "----------------------------------------------" << endl;
     cout << "\n" << endl;
     cout << "----------------------------------------------" << endl;

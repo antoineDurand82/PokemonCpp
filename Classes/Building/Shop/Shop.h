@@ -13,19 +13,13 @@
 
 class Shop : public Building {
 public:
-    Shop(int id, const std::string &name, const std::vector<Item> &stock);
-
     Shop(int id, const std::string &name, const std::vector<BallItem> &ballStock,
          const std::vector<HealItem> &healStock);
 
     const std::vector<Item> &getStock() const;
 
-    void setStock(const std::vector<Item> &stock);
-
     std::vector<BallItem> ballStock;
     std::vector<HealItem> healStock;
-
-    void listItems();
 
     void welcomeToTheShop(Trainer *trainer);
 

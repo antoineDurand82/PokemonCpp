@@ -3,7 +3,6 @@
 //
 
 #include "Shop.h"
-#include "../../Items/Potions/Potion/Potion.h"
 
 using namespace std;
 
@@ -25,10 +24,10 @@ void Shop::ballList(){
 }
 
 void Shop::askItems(Trainer *trainer) {
-    unsigned int itemTypeChoosed;
-    unsigned int healChoosed;
-    unsigned int ballChoosed;
-    unsigned int howManyItems;
+    unsigned itemTypeChoosed;
+    unsigned healChoosed;
+    unsigned ballChoosed;
+    unsigned howManyItems;
     cout << "Que voulez-vous acheter ?" << endl;
     cout << "1. Balls" << endl;
     cout << "2. Potions" << endl;

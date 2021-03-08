@@ -16,32 +16,8 @@ const string &Move::getName() const {
     return name;
 }
 
-void Move::setName(const string &name) {
-    Move::name = name;
-}
-
-const PokemonType &Move::getType() const {
-    return type;
-}
-
-void Move::setType(const PokemonType &type) {
-    Move::type = type;
-}
-
 int Move::getPower() const {
     return power;
-}
-
-void Move::setPower(int power) {
-    Move::power = power;
-}
-
-int Move::getAccuracy() const {
-    return accuracy;
-}
-
-void Move::setAccuracy(int accuracy) {
-    Move::accuracy = accuracy;
 }
 
 int Move::getPowerPoints() const {
@@ -55,8 +31,3 @@ void Move::setPowerPoints(int powerPoints) {
 int Move::getMaxPowerPoints() const {
     return maxPowerPoints;
 }
-
-void Move::setMaxPowerPoints(int maxPowerPoints) {
-    Move::maxPowerPoints = maxPowerPoints;
-}
-
