@@ -4,6 +4,7 @@
 
 #include "Pokemon.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
 Pokemon::Pokemon(int id, const string &name, const PokemonType &type, int currentHp, int maxHp,

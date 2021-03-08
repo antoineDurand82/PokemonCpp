@@ -4,11 +4,14 @@
 
 #include "Game.h"
 #include "../Trainer/Trainer.h"
+#include "../Building/Shop/Shop.h"
 #include <iostream>
 
 using namespace std;
 
-Game::Game(const Trainer &trainer, const PokemonCenter &pokeCenter) : trainer(trainer), pokeCenter(pokeCenter) {}
+Game::Game(const Trainer &trainer, const PokemonCenter &pokeCenter, const Shop &shop) : trainer(trainer),
+                                                                                        pokeCenter(pokeCenter),
+                                                                                        shop(shop) {}
 
 void Game::play(){
     for (int i = 0; i < this->trainer.teams.size(); ++i) {
@@ -23,12 +26,14 @@ void Game::play(){
     cout << "\n" << endl;
     while (!endGame){
         unsigned short actionChoosed;
+        cout << "----------------------------------------------------------------" << endl;
         cout << "Que souhaitez vous faire ?" << endl;
-        cout << "Vous avez le choix entre 3 actions diff\202rentes: " << endl;
+        cout << "Vous avez le choix entre 4 actions diff\202rentes: " << endl;
         cout << "----------------------------------------------" << endl;
         cout << "1. Aller combattre un pokemon sauvage" << endl;
         cout << "2. Aller au pokemon Center" << endl;
-        cout << "3. Quitter le jeu" << endl;
+        cout << "3. Aller au magasin" << endl;
+        cout << "4. Quitter le jeu" << endl;
         cout << "----------------------------------------------" << endl;
         cout << "Pour s\202lectionner l'une des actions vous avez juste \205 entrer le chiffre correspondant :" << endl;
         cin >> actionChoosed;
@@ -42,6 +47,9 @@ void Game::play(){
                 usePc();
                 break;
             case 3:
+                useShop();
+                break;
+            case 4:
                 cout << "Vous avez d\202cid\202 de quitter le jeu, aurevoir !" << endl;
                 endGame = true;
                 break;
@@ -77,5 +85,11 @@ void Game::usePc() {
             return usePc();
     }
 }
+
+void Game::useShop() {
+    this->shop.welcomeToTheShop(&this->trainer);
+}
+
+
 
 

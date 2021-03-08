@@ -15,21 +15,26 @@ class Shop : public Building {
 public:
     Shop(int id, const std::string &name, const std::vector<Item> &stock);
 
+    Shop(int id, const std::string &name, const std::vector<BallItem> &ballStock,
+         const std::vector<HealItem> &healStock);
+
     const std::vector<Item> &getStock() const;
 
     void setStock(const std::vector<Item> &stock);
 
-    void buy(Trainer *trainer);
-
-    std::vector<Item> stock;
+    std::vector<BallItem> ballStock;
+    std::vector<HealItem> healStock;
 
     void listItems();
 
     void welcomeToTheShop(Trainer *trainer);
 
-    void askItems();
 
     void askItems(Trainer *trainer);
+
+    void ballList();
+
+    void healList();
 };
 
 #endif //POKEMONCPP_SHOP_H

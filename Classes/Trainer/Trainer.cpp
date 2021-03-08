@@ -182,6 +182,7 @@ Trainer::chooseAction(Pokemon *pokemonChoosed, Pokemon *wildPokemon, bool *endBa
 }
 
 void Trainer::battle(Pokemon *wildPokemon){
+    unsigned short nbPokemonDied {0};
     cout << "\nUn " << wildPokemon->getName() << " sauvage est apparu !" << endl;
     cout << "Il poss\212de " << wildPokemon->hpleftOnHpmax() << " hp" << endl;
     Pokemon pokemonChoosed = teams[0];
@@ -193,6 +194,8 @@ void Trainer::battle(Pokemon *wildPokemon){
             if(!wildPokemon->checkAlived()){
                 cout << wildPokemon->getName() << " a maintenant 0 hp" << endl;
                 cout << "Votre " << pokemonChoosed.getName() << " a battu " << wildPokemon->getName() << endl;
+                setMoney(getMoney() + 500);
+                cout << "Vous avez trouv\202 500 pok\202dollars sur la victime." << endl;
                 endBattle = true;
             } else if (wildPokemon->checkAlived()){
                 cout << wildPokemon->getName() << " a maintenant " << wildPokemon->hpleftOnHpmax() << " hp" << endl;
@@ -201,10 +204,9 @@ void Trainer::battle(Pokemon *wildPokemon){
                 if(!pokemonChoosed.checkAlived()){
                     cout << pokemonChoosed.getName() << " a maintenant 0 hp" << endl;
                     cout << "Votre " << pokemonChoosed.getName() << " a \202t\202 battu par " << wildPokemon->getName() << endl;
-                    unsigned short nbPokemonDied;
                     for (int i = 0; i < this->getTeams().size() - 1; ++i) {
                         if(this->getTeams()[i].getCurrentHp() <= 0){
-                            nbPokemonDied++;
+                            nbPokemonDied += 1;
                         }
                     }
                     if(nbPokemonDied == this->getTeams().size()){

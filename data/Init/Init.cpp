@@ -25,7 +25,7 @@ PokemonType INSECTE = {"INSECTE", {"FEE", "COMBAT", "FEU", "VOL", "SPECTRE", "PO
 PokemonType NORMAL = {"NORMAL", {"ROCHE", "ACIER"}, {}, {"SPECTRE"}, {"COMBAT"}, {}, {"SPECTRE"}};
 PokemonType PLANTE = {"PLANTE", {"INSECTE", "DRAGON", "FEU", "VOL", "PLANTE", "POISON", "ACIER"}, {"SOL", "ROCHE", "EAU"}, {}, {"INSECTE", "FEU", "VOL", "GLACE", "POISON"}, {"ELECTRIK", "PLANTE", "SOL", "EAU"}, {}};
 PokemonType POISON = {"POISON", {"SPECTRE", "SOL", "POISON", "ROCHE"}, {"FEE", "PLANTE"}, {"ACIER"}, {"SOL", "PSY"}, {"INSECTE", "FEE", "COMBAT", "PLANTE", "POISON"}, {}};
-PokemonType PSY = {"PSY", {"PSY", "ACIER"}, {"COMBAT", "POISON"}, {"TENEBRES"}, {"INSECTE", "TENEBRES", "SEPCTRE"}, {"COMBAT", "PSY"}, {}};
+PokemonType PSY = {"PSY", {"PSY", "ACIER"}, {"COMBAT", "POISON"}, {"TENEBRES"}, {"INSECTE", "TENEBRES", "SPECTRE"}, {"COMBAT", "PSY"}, {}};
 PokemonType ROCHE = {"ROCHE", {"COMBAT", "FEU", "VOL", "GLACE"}, {"INSECTE", "FEU", "VOL", "GLACE"}, {}, {"COMBAT", "PLANTE", "SOL", "ACIER", "EAU"}, {"FEU", "VOL", "NORMAL", "POISON"}, {}};
 PokemonType SOL = {"SOL", {"INSECTE", "PLANTE"}, {"ELECTRIK", "FEU", "POISON", "ROCHE", "ACIER"}, {"VOL"}, {"PLANTE", "GLACE", "WATER"}, {"POISON", "ROCHE"}, {"ELECTRIK"}};
 PokemonType SPECTRE = {"SPECTRE", {"TENEBRES"}, {"SPECTRE", "PSY"}, {"NORMAL"}, {"TENEBRES", "SPECTRE"}, {"INSECTE", "POISON"}, {"COMBAT", "NORMAL"}};
@@ -324,7 +324,7 @@ int log_trainer(){
 int g = log_trainer();
 
 PokemonCenter pokemonCenter = {1, "Centre"};
-Shop shop = {1, "shop", {PotionItem, SuperPotionItem, HyperPotionItem, PotionMaxItem, PokeBall, SuperBall, HyperBall}};
+Shop shop = {1, "shop", {PokeBall, SuperBall, HyperBall}, {PotionItem, SuperPotionItem, HyperPotionItem, PotionMaxItem}};
 
 int log_pokemonCenter(){
     cout << "Tout les pokemon Center sont sortis du sol !" << endl;
@@ -337,7 +337,7 @@ int log_pokemonCenter(){
 
 int h = log_pokemonCenter();
 
-Game pokemonCPP = {Sacha, pokemonCenter};
+Game pokemonCPP = {Sacha, pokemonCenter, shop};
 
 int log_end(){
     cout << "La vie vient de d\202marer !" << endl;
