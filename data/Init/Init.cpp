@@ -327,7 +327,7 @@ PokemonCenter pokemonCenter = {1, "Centre"};
 Shop shop = {1, "shop", {PokeBall, SuperBall, HyperBall}, {PotionItem, SuperPotionItem, HyperPotionItem, PotionMaxItem}};
 
 int log_pokemonCenter(){
-    cout << "Les b\203 sont sortis du sol !" << endl;
+    cout << "Les b\203timents sont sortis du sol !" << endl;
     cout << "----------------------------------------------" << endl;
     cout << "\n" << endl;
     cout << "----------------------------------------------" << endl;
