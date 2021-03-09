@@ -6,6 +6,7 @@
 #include "../EnumLocation/Location.h"
 #include <iostream>
 #include <stdlib.h>
+#include <ctime>
 #include "../../data/Init/Init.h"
 
 using namespace std;
@@ -100,6 +101,7 @@ void Trainer::searchWildPokemon() {
         teams[i].setIsCaptured(true);
     }
     vector<Pokemon> listPokemon = choice.getListPokemon();
+    srand(time(NULL));
     Pokemon wildPokemon = listPokemon[rand() % listPokemon.size()];
     battle(&wildPokemon);
     return;
