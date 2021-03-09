@@ -5,6 +5,8 @@
 #include "Pokemon.h"
 #include <iostream>
 #include <string>
+#include <ctime>
+
 using namespace std;
 
 Pokemon::Pokemon(int id, const string &name, const PokemonType &type, int currentHp, int maxHp,
@@ -71,6 +73,7 @@ void Pokemon::showMoves(){
 }
 
 int Pokemon::randomAttack(){
+    srand(time(NULL));
     Move *attackUsed =  &this->moves[rand() % this->moves.size()];
     if(this->canUseTM(attackUsed)){
         int damageMade = this->useTM(attackUsed);
